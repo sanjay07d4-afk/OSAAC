@@ -4,8 +4,8 @@
 
 @layer base {
   body {
-    background-color: #FFFFFF; /* Pure White Background */
-    color: #0B0F14; /* Primary Dark Text */
+    background-color: #F8FAFC; /* Premium Off-White Base */
+    color: #0B0F19; /* Deep Navy Primary Text */
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -13,13 +13,13 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Outfit', sans-serif;
-    color: #0B0F14; /* Deep Primary Heading Text */
+    color: #0B0F19; /* Deep Navy Heading Text */
     font-weight: 600;
   }
 
   /* Custom focus ring matching the brand cyan */
   :focus-visible {
-    outline: 2px solid #00D2FF;
+    outline: 2px solid #00E5FF;
     outline-offset: 2px;
   }
 }
@@ -34,14 +34,14 @@ html {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #FFFFFF;
+  background: #F8FAFC;
 }
 ::-webkit-scrollbar-thumb {
   background: #CBD5E1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #00D2FF;
+  background: #00E5FF;
 }
 
 /* Flowing connector stroke animation */

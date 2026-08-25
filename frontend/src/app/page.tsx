@@ -187,7 +187,7 @@ export default function Home() {
       
       {/* Hero Section */}
       <section className="relative min-h-[88vh] flex items-center justify-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 border-b border-slate-200">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-100/60 via-white to-white pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,_rgba(0,229,255,0.06),_rgba(0,91,255,0.03),_transparent_80%)] pointer-events-none" />
         
         <motion.div
           className="max-w-5xl mx-auto text-center z-10 space-y-7"

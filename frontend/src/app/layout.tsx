@@ -24,10 +24,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://osaac.vercel.app'),
   icons: {
     icon: [
-      { url: '/icon.png', type: 'image/png' },
       { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png' },
     ],
-    shortcut: '/icon.png',
+    shortcut: '/favicon.ico',
     apple: '/icon.png',
   },
   openGraph: {

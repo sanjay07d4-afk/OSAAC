@@ -13,7 +13,7 @@ const app = express();
 app.use(helmet());
 
 // CORS Configuration — support wildcard, single, or comma-separated origins
-const rawCorsOrigin = process.env.CORS_ORIGIN || '*';
+const rawCorsOrigin = process.env.CORS_ORIGIN || 'https://osaac.vercel.app, http://localhost:3000, http://localhost:3001';
 app.use(
   cors({
     origin: (origin, callback) => {

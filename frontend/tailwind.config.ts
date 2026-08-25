@@ -9,11 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        obsidian: '#FFFFFF',
-        champagne: '#00D2FF',
-        ivory: '#0B0F14',
-        graphite: '#F8FAFC',
-        mutedgold: '#0099DD',
+        obsidian: '#F8FAFC',
+        champagne: '#00E5FF',
+        ivory: '#0B0F19',
+        graphite: '#FFFFFF',
+        mutedgold: '#005BFF',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
