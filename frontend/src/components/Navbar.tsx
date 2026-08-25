@@ -27,7 +27,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-obsidian/95 backdrop-blur-md border-b border-graphite/80 transition-all duration-300">
+    <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-[72px] sm:h-[76px]">
           {/* Official OSAAC Logo — Constrained Container & Proportions */}
@@ -53,7 +53,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   className={`relative text-xs font-semibold uppercase tracking-widest transition-colors duration-200 py-2 ${
-                    active ? 'text-champagne font-bold' : 'text-ivory/70 hover:text-champagne'
+                    active ? 'text-[#0099DD] font-bold' : 'text-slate-700 hover:text-[#0099DD]'
                   }`}
                 >
                   {link.name}
@@ -69,7 +69,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <Link
               href="/start-project"
-              className="inline-flex items-center justify-center px-5 py-2.5 text-xs font-bold uppercase tracking-widest text-obsidian bg-champagne border border-champagne rounded-sm transition-all duration-300 hover:bg-mutedgold hover:border-mutedgold shadow-sm shadow-champagne/10 hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center px-5 py-2.5 text-xs font-bold uppercase tracking-widest text-slate-950 bg-champagne border border-champagne rounded-sm transition-all duration-300 hover:bg-mutedgold hover:border-mutedgold shadow-sm shadow-champagne/20 hover:-translate-y-0.5"
             >
               START YOUR PROJECT
               <ArrowUpRight className="ml-1.5 h-3.5 w-3.5" />
@@ -81,7 +81,7 @@ export default function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="inline-flex items-center justify-center p-2 text-champagne hover:text-ivory focus:outline-none transition-colors"
+              className="inline-flex items-center justify-center p-2 text-[#0099DD] hover:text-slate-900 focus:outline-none transition-colors"
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >
@@ -94,7 +94,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Panel */}
       {isOpen && (
-        <div className="md:hidden bg-obsidian/98 border-b border-graphite animate-fade-in" id="mobile-menu">
+        <div className="md:hidden bg-white border-b border-slate-200 animate-fade-in shadow-lg" id="mobile-menu">
           <div className="px-4 pt-3 pb-6 space-y-2">
             {navLinks.map((link) => {
               const active = isActive(link.href);
@@ -104,7 +104,7 @@ export default function Navbar() {
                   href={link.href}
                   onClick={() => setIsOpen(false)}
                   className={`block px-3 py-2.5 text-sm font-semibold uppercase tracking-widest rounded-sm transition-colors duration-200 ${
-                    active ? 'text-champagne bg-graphite/60 font-bold border-l-2 border-champagne' : 'text-ivory/80 hover:text-champagne hover:bg-graphite/30'
+                    active ? 'text-[#0099DD] bg-slate-100 font-bold border-l-2 border-champagne' : 'text-slate-700 hover:text-[#0099DD] hover:bg-slate-50'
                   }`}
                 >
                   {link.name}
@@ -115,7 +115,7 @@ export default function Navbar() {
               <Link
                 href="/start-project"
                 onClick={() => setIsOpen(false)}
-                className="flex items-center justify-center w-full px-5 py-3 text-xs font-bold uppercase tracking-widest text-obsidian bg-champagne rounded-sm hover:bg-mutedgold transition-all duration-300"
+                className="flex items-center justify-center w-full px-5 py-3 text-xs font-bold uppercase tracking-widest text-slate-950 bg-champagne rounded-sm hover:bg-mutedgold transition-all duration-300"
               >
                 START YOUR PROJECT
                 <ArrowUpRight className="ml-1.5 h-4 w-4" />

@@ -30,7 +30,7 @@ export default function Home() {
       desc: 'Custom websites and digital platforms engineered for performance, security, responsiveness, and scalability.',
       tag: 'Core Engineering',
       visual: (
-        <div className="w-full h-44 bg-gradient-to-br from-graphite to-obsidian border border-graphite/80 rounded-lg p-3.5 relative overflow-hidden flex flex-col justify-between group-hover:border-champagne/40 transition-colors duration-500">
+        <div className="w-full h-44 bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-lg p-3.5 relative overflow-hidden flex flex-col justify-between group-hover:border-champagne/60 transition-colors duration-500">
           <div className="flex items-center justify-between border-b border-graphite/80 pb-2">
             <div className="flex items-center space-x-1.5">
               <span className="w-2.5 h-2.5 rounded-full bg-champagne/40" />
@@ -58,7 +58,7 @@ export default function Home() {
       desc: 'Intelligent workflow automation, lead processing, and business system integrations tailored to your operations.',
       tag: 'Workflow Intelligence',
       visual: (
-        <div className="w-full h-44 bg-gradient-to-br from-graphite to-obsidian border border-graphite/80 rounded-lg p-3.5 relative overflow-hidden flex flex-col justify-between group-hover:border-champagne/40 transition-colors duration-500">
+        <div className="w-full h-44 bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-lg p-3.5 relative overflow-hidden flex flex-col justify-between group-hover:border-champagne/60 transition-colors duration-500">
           <div className="flex items-center justify-between border-b border-graphite/80 pb-2">
             <div className="flex items-center space-x-1.5">
               <Cpu className="w-3.5 h-3.5 text-champagne" />
@@ -94,7 +94,7 @@ export default function Home() {
       desc: 'Memorable brand visuals, logo systems, typography kits, and complete identity packages that set you apart.',
       tag: 'Brand Architecture',
       visual: (
-        <div className="w-full h-44 bg-gradient-to-br from-graphite to-obsidian border border-graphite/80 rounded-lg p-3.5 relative overflow-hidden flex flex-col justify-between group-hover:border-champagne/40 transition-colors duration-500">
+        <div className="w-full h-44 bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-lg p-3.5 relative overflow-hidden flex flex-col justify-between group-hover:border-champagne/60 transition-colors duration-500">
           <div className="flex items-center justify-between border-b border-graphite/80 pb-2">
             <div className="flex items-center space-x-1.5">
               <Palette className="w-3.5 h-3.5 text-champagne" />
@@ -132,7 +132,7 @@ export default function Home() {
       desc: 'Future-proof digital tools, dashboards, databases, and custom systems architected for real-world impact.',
       tag: 'Custom Platforms',
       visual: (
-        <div className="w-full h-44 bg-gradient-to-br from-graphite to-obsidian border border-graphite/80 rounded-lg p-3.5 relative overflow-hidden flex flex-col justify-between group-hover:border-champagne/40 transition-colors duration-500">
+        <div className="w-full h-44 bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-lg p-3.5 relative overflow-hidden flex flex-col justify-between group-hover:border-champagne/60 transition-colors duration-500">
           <div className="flex items-center justify-between border-b border-graphite/80 pb-2">
             <div className="flex items-center space-x-1.5">
               <LayoutDashboard className="w-3.5 h-3.5 text-champagne" />
@@ -186,8 +186,8 @@ export default function Home() {
     <div className="relative w-full overflow-hidden bg-obsidian text-ivory">
       
       {/* Hero Section */}
-      <section className="relative min-h-[88vh] flex items-center justify-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 border-b border-graphite/80">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-graphite/40 via-obsidian to-obsidian pointer-events-none" />
+      <section className="relative min-h-[88vh] flex items-center justify-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 border-b border-slate-200">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-100/60 via-white to-white pointer-events-none" />
         
         <motion.div
           className="max-w-5xl mx-auto text-center z-10 space-y-7"
@@ -228,14 +228,14 @@ export default function Home() {
           >
             <Link
               href="/start-project"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-obsidian bg-champagne border border-champagne rounded-sm transition-all duration-300 hover:bg-mutedgold hover:border-mutedgold shadow-lg shadow-champagne/10 hover:-translate-y-0.5"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-950 bg-champagne border border-champagne rounded-sm transition-all duration-300 hover:bg-mutedgold hover:border-mutedgold shadow-md shadow-champagne/20 hover:-translate-y-0.5"
             >
               START YOUR PROJECT
               <ArrowUpRight className="ml-2 h-4 w-4" />
             </Link>
             <Link
               href="/portfolio"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-ivory bg-graphite/80 border border-graphite rounded-sm transition-all duration-300 hover:bg-graphite hover:border-champagne/40"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-800 bg-slate-100 border border-slate-300 rounded-sm transition-all duration-300 hover:bg-slate-200 hover:border-slate-400"
             >
               View Our Work
             </Link>
@@ -459,19 +459,19 @@ export default function Home() {
       </section>
 
       {/* CTA Footer Banner */}
-      <section className="py-20 bg-graphite/70 border-t border-graphite/80 text-center px-4">
+      <section className="py-20 bg-slate-50 border-t border-slate-200 text-center px-4">
         <div className="max-w-3xl mx-auto space-y-6">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-slate-900">
             Ready to Build Your Project?
           </h2>
-          <p className="text-sm text-ivory/70 max-w-xl mx-auto leading-relaxed">
+          <p className="text-sm text-slate-600 max-w-xl mx-auto leading-relaxed">
             Partner with us to build elegant, high-performing websites and custom automation.
             Get a tailored quotation based on your specific requirements.
           </p>
           <div className="pt-4">
             <Link
               href="/start-project"
-              className="inline-flex items-center justify-center px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-obsidian bg-champagne border border-champagne rounded-sm transition-all duration-300 hover:bg-mutedgold hover:border-mutedgold hover:-translate-y-0.5 shadow-lg shadow-champagne/10"
+              className="inline-flex items-center justify-center px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-950 bg-champagne border border-champagne rounded-sm transition-all duration-300 hover:bg-mutedgold hover:border-mutedgold hover:-translate-y-0.5 shadow-md shadow-champagne/20"
             >
               START YOUR PROJECT
               <ArrowUpRight className="ml-2 h-4 w-4" />

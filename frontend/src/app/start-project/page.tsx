@@ -92,7 +92,7 @@ export default function StartProject() {
       return;
     }
 
-    const rawBackendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+    const rawBackendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || process.env.NEXT_PUBLIC_API_URL || 'https://osaac.onrender.com';
     const backendUrl = rawBackendUrl.replace(/\/+$/, '').replace(/\/api$/, '');
 
     try {
@@ -316,7 +316,7 @@ export default function StartProject() {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full inline-flex items-center justify-center py-4 px-6 text-xs font-bold uppercase tracking-widest text-obsidian bg-champagne hover:bg-mutedgold disabled:bg-champagne/50 rounded-sm transition-all duration-300 shadow-md shadow-champagne/10 cursor-pointer hover:-translate-y-0.5 min-h-[50px]"
+                      className="w-full inline-flex items-center justify-center py-4 px-6 text-xs font-bold uppercase tracking-widest text-slate-950 bg-champagne hover:bg-mutedgold disabled:bg-champagne/50 rounded-sm transition-all duration-300 shadow-md shadow-champagne/20 cursor-pointer hover:-translate-y-0.5 min-h-[50px]"
                     >
                       {loading ? (
                         <>

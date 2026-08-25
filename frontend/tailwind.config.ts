@@ -9,10 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        obsidian: '#0B0B0F',
+        obsidian: '#FFFFFF',
         champagne: '#00D2FF',
-        ivory: '#F5F1E8',
-        graphite: '#24242B',
+        ivory: '#0B0F14',
+        graphite: '#F8FAFC',
         mutedgold: '#0099DD',
       },
       fontFamily: {
