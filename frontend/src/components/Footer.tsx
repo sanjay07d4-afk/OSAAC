@@ -14,7 +14,7 @@ export default function Footer() {
             <Link href="/" className="inline-block group py-1">
               <Image
                 src="/logo.png"
-                alt="DRST Technologies"
+                alt="OSAAC"
                 width={160}
                 height={48}
                 className="h-[42px] w-auto max-h-[48px] object-contain transition-opacity duration-300 group-hover:opacity-90"
@@ -103,15 +103,15 @@ export default function Footer() {
                 <div className="p-1.5 bg-graphite rounded text-champagne shrink-0">
                   <Phone className="h-4 w-4" />
                 </div>
-                <a href="tel:+918870620760" className="text-ivory/70 hover:text-champagne transition-colors duration-200">
-                  8870620760
+                <a href="tel:+917603881020" className="text-ivory/70 hover:text-champagne transition-colors duration-200">
+                  +91 7603881020
                 </a>
               </li>
               <li className="flex items-center space-x-3">
                 <div className="p-1.5 bg-graphite rounded text-champagne shrink-0">
                   <MessageSquare className="h-4 w-4" />
                 </div>
-                <a href="https://wa.me/918870620760" target="_blank" rel="noopener noreferrer" className="text-ivory/70 hover:text-champagne transition-colors duration-200">
+                <a href="https://wa.me/917603881020" target="_blank" rel="noopener noreferrer" className="text-ivory/70 hover:text-champagne transition-colors duration-200">
                   WhatsApp
                 </a>
               </li>
@@ -119,8 +119,8 @@ export default function Footer() {
                 <div className="p-1.5 bg-graphite rounded text-champagne shrink-0">
                   <Mail className="h-4 w-4" />
                 </div>
-                <a href="mailto:sanjay07d4@gmail.com" className="text-ivory/70 hover:text-champagne transition-colors duration-200 break-all">
-                  sanjay07d4@gmail.com
+                <a href="mailto:OSAAC@gmail.com" className="text-ivory/70 hover:text-champagne transition-colors duration-200 break-all">
+                  OSAAC@gmail.com
                 </a>
               </li>
             </ul>
@@ -129,7 +129,7 @@ export default function Footer() {
 
         {/* Bottom Legal Section */}
         <div className="pt-8 border-t border-graphite/60 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-xs text-ivory/50">
-          <p>&copy; {currentYear} DRST Technologies. All rights reserved.</p>
+          <p>&copy; {currentYear} OSAAC. All rights reserved.</p>
           <div className="flex flex-wrap justify-center gap-6">
             <Link href="/privacy-policy" className="hover:text-champagne transition-colors duration-200">
               Privacy Policy

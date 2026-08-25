@@ -46,7 +46,7 @@ export default function Portfolio() {
         </h1>
         <p className="text-sm sm:text-base text-ivory/60 leading-relaxed max-w-lg mx-auto">
           We showcase only real, completed client projects. Below is the official project engineered
-          by DRST Technologies.
+          by OSAAC.
         </p>
       </div>
 

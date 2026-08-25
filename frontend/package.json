@@ -1,7 +1,7 @@
 {
-  "name": "drst-frontend",
+  "name": "osaac-frontend",
   "version": "1.0.0",
-  "description": "Production Next.js Frontend for DRST Technologies",
+  "description": "Production Next.js Frontend for OSAAC",
   "private": true,
   "scripts": {
     "dev": "next dev -p 3000",

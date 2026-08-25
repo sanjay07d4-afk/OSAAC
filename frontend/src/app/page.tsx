@@ -37,7 +37,7 @@ export default function Home() {
               <span className="w-2.5 h-2.5 rounded-full bg-champagne/20" />
               <span className="w-2.5 h-2.5 rounded-full bg-champagne/20" />
             </div>
-            <span className="text-[10px] font-mono text-champagne/60 tracking-wider">drst.tech/app.tsx</span>
+            <span className="text-[10px] font-mono text-champagne/60 tracking-wider">osaac.tech/app.tsx</span>
           </div>
           <div className="font-mono text-[11px] text-ivory/60 space-y-1 py-1">
             <p className="text-champagne/80"><span className="text-ivory/40">const</span> system = <span className="text-champagne">createPlatform</span>({'{'}</p>
@@ -105,14 +105,14 @@ export default function Home() {
           <div className="flex items-center justify-around py-2">
             <div className="space-y-1 text-center">
               <div className="w-12 h-10 border border-champagne/40 rounded flex items-center justify-center bg-obsidian text-champagne font-display font-bold text-lg">
-                D
+                O
               </div>
               <span className="text-[8px] text-ivory/50 font-mono uppercase">Monogram</span>
             </div>
             <div className="space-y-1.5">
               <div className="flex items-center space-x-1.5">
                 <div className="w-4 h-4 rounded bg-[#0B0B0F] border border-graphite" title="Obsidian" />
-                <div className="w-4 h-4 rounded bg-[#D4AF6A]" title="Champagne Gold" />
+                <div className="w-4 h-4 rounded bg-[#00D2FF]" title="Cyan Accent" />
                 <div className="w-4 h-4 rounded bg-[#F5F1E8]" title="Warm Ivory" />
                 <div className="w-4 h-4 rounded bg-[#24242B]" title="Graphite" />
               </div>
@@ -204,7 +204,7 @@ export default function Home() {
             variants={itemVariants} 
             className="text-4xl sm:text-6xl md:text-7xl font-bold font-display leading-[1.1] tracking-tight"
           >
-            DRST Technologies
+            OSAAC
           </motion.h1>
 
           <motion.p 
@@ -366,7 +366,7 @@ export default function Home() {
             {/* Background Glow Path */}
             <path
               d="M 150 60 C 275 60, 325 15, 450 15 C 575 15, 625 105, 750 105 C 875 105, 925 60, 1050 60"
-              stroke="#D4AF6A"
+              stroke="#00D2FF"
               strokeWidth="4"
               strokeOpacity="0.15"
               strokeLinecap="round"
@@ -385,10 +385,10 @@ export default function Home() {
             {/* Gradient definition */}
             <defs>
               <linearGradient id="processGradientFlow" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#D4AF6A" stopOpacity="0.4" />
-                <stop offset="33%" stopColor="#D4AF6A" stopOpacity="0.9" />
-                <stop offset="66%" stopColor="#D4AF6A" stopOpacity="0.9" />
-                <stop offset="100%" stopColor="#D4AF6A" stopOpacity="0.4" />
+                <stop offset="0%" stopColor="#00D2FF" stopOpacity="0.4" />
+                <stop offset="33%" stopColor="#00D2FF" stopOpacity="0.9" />
+                <stop offset="66%" stopColor="#00D2FF" stopOpacity="0.9" />
+                <stop offset="100%" stopColor="#00D2FF" stopOpacity="0.4" />
               </linearGradient>
             </defs>
           </svg>

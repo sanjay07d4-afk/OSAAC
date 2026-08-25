@@ -18,10 +18,10 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: 'DRST Technologies | Digital Solutions. Real Transformation.',
+  title: 'OSAAC | Digital Solutions. Real Transformation.',
   description: 'Premium website development, customized AI automation workflows, and elegant brand identity design. Discover digital solutions for real transformation.',
   // Note: System must support changing domain later. We configure metadataBase dynamically or via a fallback:
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://drst-technologies.vercel.app'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://osaac.vercel.app'),
   icons: {
     icon: [
       { url: '/icon.png', type: 'image/png' },
@@ -31,22 +31,22 @@ export const metadata: Metadata = {
     apple: '/icon.png',
   },
   openGraph: {
-    title: 'DRST Technologies | Digital Solutions. Real Transformation.',
+    title: 'OSAAC | Digital Solutions. Real Transformation.',
     description: 'Engineering professional websites, automation solutions, and distinct brand identities. High-end conversion-focused tech solutions.',
     images: [
       {
         url: '/logo.png',
         width: 1200,
         height: 630,
-        alt: 'DRST Technologies Logo',
+        alt: 'OSAAC Logo',
       },
     ],
     type: 'website',
-    siteName: 'DRST Technologies',
+    siteName: 'OSAAC',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DRST Technologies | Digital Solutions. Real Transformation.',
+    title: 'OSAAC | Digital Solutions. Real Transformation.',
     description: 'Engineering professional websites, automation solutions, and distinct brand identities.',
     images: ['/logo.png'],
   },

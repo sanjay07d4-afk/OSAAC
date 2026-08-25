@@ -10,10 +10,10 @@ const config: Config = {
     extend: {
       colors: {
         obsidian: '#0B0B0F',
-        champagne: '#D4AF6A',
+        champagne: '#00D2FF',
         ivory: '#F5F1E8',
         graphite: '#24242B',
-        mutedgold: '#A8894F',
+        mutedgold: '#0099DD',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

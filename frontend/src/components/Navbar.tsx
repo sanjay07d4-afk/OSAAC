@@ -30,12 +30,12 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 w-full z-50 bg-obsidian/95 backdrop-blur-md border-b border-graphite/80 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-[72px] sm:h-[76px]">
-          {/* Official DRST Logo — Constrained Container & Proportions */}
+          {/* Official OSAAC Logo — Constrained Container & Proportions */}
           <div className="flex items-center shrink-0">
             <Link href="/" className="flex items-center group py-2">
               <Image
                 src="/logo.png"
-                alt="DRST Technologies"
+                alt="OSAAC"
                 width={170}
                 height={52}
                 priority

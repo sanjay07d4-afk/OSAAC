@@ -9,7 +9,7 @@ export default function RefundPolicy() {
 
       <div className="space-y-6 text-sm text-ivory/80 leading-relaxed">
         <p>
-          At DRST Technologies, we configure and deploy custom code, software automation, and visual design layouts 
+          At OSAAC, we configure and deploy custom code, software automation, and visual design layouts 
           based strictly on details and scopes established prior to project launch.
         </p>
 
@@ -55,7 +55,7 @@ export default function RefundPolicy() {
         </section>
 
         <div className="p-4 bg-graphite/40 border border-graphite rounded-sm text-xs text-ivory/60">
-          <strong>Notice:</strong> This policy constitutes commercial terms between DRST Technologies and the client. 
+          <strong>Notice:</strong> This policy constitutes commercial terms between OSAAC and the client. 
           It does not represent, nor should it be interpreted as, professional legal advice.
         </div>
       </div>

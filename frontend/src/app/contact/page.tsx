@@ -8,23 +8,23 @@ export default function Contact() {
     {
       icon: <Phone className="h-5 w-5" />,
       label: 'PHONE',
-      value: '8870620760',
-      href: 'tel:+918870620760',
+      value: '+91 7603881020',
+      href: 'tel:+917603881020',
       description: 'Direct line for project discussions and inquiries.'
     },
     {
       icon: <MessageSquare className="h-5 w-5" />,
       label: 'WHATSAPP',
-      value: '8870620760',
-      href: 'https://wa.me/918870620760',
+      value: '+91 7603881020',
+      href: 'https://wa.me/917603881020',
       external: true,
       description: 'Quick messaging and real-time requirement sharing.'
     },
     {
       icon: <Mail className="h-5 w-5" />,
       label: 'EMAIL',
-      value: 'sanjay07d4@gmail.com',
-      href: 'mailto:sanjay07d4@gmail.com',
+      value: 'OSAAC@gmail.com',
+      href: 'mailto:OSAAC@gmail.com',
       description: 'Send complete project specs and documentation.'
     }
   ];
@@ -41,7 +41,7 @@ export default function Contact() {
             Contact Us
           </h1>
           <p className="text-sm sm:text-base text-ivory/60 leading-relaxed max-w-lg mx-auto">
-            Connect with DRST Technologies directly through our active channels or initiate a project enquiry.
+            Connect with OSAAC directly through our active channels or initiate a project enquiry.
           </p>
         </div>
 

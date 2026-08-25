@@ -11,7 +11,7 @@ export default function TermsAndConditions() {
         <section className="space-y-2">
           <h2 className="text-lg font-bold font-display text-champagne">1. Project Scope & Deliverables</h2>
           <p>
-            DRST Technologies delivers custom websites, AI automation, and branding graphics as defined 
+            OSAAC delivers custom websites, AI automation, and branding graphics as defined 
             in the agreed-upon project specifications. Any features, pages, or integrations not explicitly documented 
             in the project scope agreement are treated as out-of-scope work and will incur additional fees.
           </p>

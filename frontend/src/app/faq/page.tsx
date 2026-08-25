@@ -12,7 +12,7 @@ export default function FAQ() {
 
   const faqData = [
     {
-      q: 'What services does DRST Technologies provide?',
+      q: 'What services does OSAAC provide?',
       a: 'We provide custom website development (basic, business, and premium sites), custom AI workflow automation scripts, and digital logo and brand identity design. We also have mobile app development planned for the future.'
     },
     {

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://drst-technologies.vercel.app/sitemap.xml
+Sitemap: https://osaac.vercel.app/sitemap.xml

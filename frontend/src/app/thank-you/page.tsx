@@ -23,7 +23,7 @@ function ThankYouContent() {
 
         <p className="text-base text-ivory/80 leading-relaxed max-w-lg mx-auto">
           Your project enquiry has been submitted successfully. Thank you for contacting 
-          <strong> DRST Technologies</strong>. We will review your requirements and get in touch 
+          <strong> OSAAC</strong>. We will review your requirements and get in touch 
           with you shortly.
         </p>
       </div>
@@ -56,7 +56,7 @@ function ThankYouContent() {
             Back to Home
           </Link>
           <a
-            href="https://wa.me/918870620760"
+            href="https://wa.me/917603881020"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 border border-champagne text-xs font-semibold uppercase tracking-wider text-obsidian bg-champagne rounded-sm hover:bg-mutedgold hover:border-mutedgold transition-all duration-300"

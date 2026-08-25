@@ -35,7 +35,7 @@ export default function About() {
             Company Overview
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-display tracking-tight">
-            About DRST Technologies
+            About OSAAC
           </h1>
           <p className="text-lg text-champagne tracking-wide max-w-xl mx-auto font-light">
             Digital Solutions. Real Transformation.
@@ -45,7 +45,7 @@ export default function About() {
         {/* Intro Copy */}
         <motion.div variants={itemVariants} className="space-y-6 text-sm sm:text-base text-ivory/80 leading-relaxed bg-graphite/40 p-8 sm:p-10 border border-graphite/80 rounded-xl">
           <p>
-            DRST Technologies is dedicated to engineering practical, modern digital transformations. 
+            OSAAC is dedicated to engineering practical, modern digital transformations. 
             We build and deliver software and brands tailored to help businesses optimize operations 
             and establish a premium online footprint.
           </p>

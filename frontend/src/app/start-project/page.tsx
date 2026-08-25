@@ -153,7 +153,7 @@ export default function StartProject() {
             </div>
             <h2 className="text-2xl font-bold font-display text-champagne">Submission Successful</h2>
             <p className="text-sm text-ivory/80 leading-relaxed max-w-lg mx-auto">
-              Your project enquiry has been submitted successfully. Thank you for contacting DRST Technologies. 
+              Your project enquiry has been submitted successfully. Thank you for contacting OSAAC. 
               We will review your requirements and get in touch with you promptly.
             </p>
             <p className="text-xs font-mono text-champagne/70 animate-pulse pt-2">
@@ -353,7 +353,7 @@ export default function StartProject() {
                 <div className="space-y-4 sm:space-y-5">
                   {/* Phone */}
                   <a
-                    href="tel:+918870620760"
+                    href="tel:+917603881020"
                     className="flex items-start gap-3.5 group p-3 rounded-lg hover:bg-graphite/40 transition-colors"
                   >
                     <div className="p-2.5 bg-obsidian rounded-lg text-champagne border border-graphite group-hover:border-champagne/40 group-hover:scale-105 transition-all shrink-0">
@@ -361,13 +361,13 @@ export default function StartProject() {
                     </div>
                     <div className="min-w-0">
                       <span className="text-[10px] font-mono font-bold text-ivory/40 uppercase tracking-wider block">Phone</span>
-                      <span className="text-sm font-bold font-display text-champagne group-hover:text-ivory transition-colors">8870620760</span>
+                      <span className="text-sm font-bold font-display text-champagne group-hover:text-ivory transition-colors">+91 7603881020</span>
                     </div>
                   </a>
 
                   {/* WhatsApp */}
                   <a
-                    href="https://wa.me/918870620760"
+                    href="https://wa.me/917603881020"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-start gap-3.5 group p-3 rounded-lg hover:bg-graphite/40 transition-colors"
@@ -377,13 +377,13 @@ export default function StartProject() {
                     </div>
                     <div className="min-w-0">
                       <span className="text-[10px] font-mono font-bold text-ivory/40 uppercase tracking-wider block">WhatsApp</span>
-                      <span className="text-sm font-bold font-display text-champagne group-hover:text-ivory transition-colors">8870620760</span>
+                      <span className="text-sm font-bold font-display text-champagne group-hover:text-ivory transition-colors">+91 7603881020</span>
                     </div>
                   </a>
 
                   {/* Email */}
                   <a
-                    href="mailto:sanjay07d4@gmail.com"
+                    href="mailto:OSAAC@gmail.com"
                     className="flex items-start gap-3.5 group p-3 rounded-lg hover:bg-graphite/40 transition-colors"
                   >
                     <div className="p-2.5 bg-obsidian rounded-lg text-champagne border border-graphite group-hover:border-champagne/40 group-hover:scale-105 transition-all shrink-0">
@@ -391,7 +391,7 @@ export default function StartProject() {
                     </div>
                     <div className="min-w-0 flex-1">
                       <span className="text-[10px] font-mono font-bold text-ivory/40 uppercase tracking-wider block">Email</span>
-                      <span className="text-sm font-bold font-display text-champagne group-hover:text-ivory transition-colors break-all">sanjay07d4@gmail.com</span>
+                      <span className="text-sm font-bold font-display text-champagne group-hover:text-ivory transition-colors break-all">OSAAC@gmail.com</span>
                     </div>
                   </a>
                 </div>
