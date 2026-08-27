@@ -57,13 +57,13 @@ export default function FAQ() {
     <div className="bg-obsidian text-ivory py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto space-y-12">
       {/* Header */}
       <div className="text-center space-y-4">
-        <span className="inline-block text-xs font-bold uppercase tracking-widest text-champagne/80">
+        <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#005BFF]">
           Got Questions?
         </span>
-        <h1 className="text-4xl sm:text-5xl font-bold font-display tracking-tight">
+        <h1 className="text-4xl sm:text-5xl font-bold font-display tracking-tight text-[#0B0F19]">
           Frequently Asked Questions
         </h1>
-        <p className="text-sm sm:text-base text-ivory/60 max-w-lg mx-auto leading-relaxed">
+        <p className="text-sm sm:text-base text-slate-600 max-w-lg mx-auto leading-relaxed">
           Find clear, truthful information regarding our services, technical policies, and development cycles.
         </p>
       </div>
@@ -75,22 +75,22 @@ export default function FAQ() {
           return (
             <div
               key={idx}
-              className="bg-graphite/40 border border-graphite/80 rounded-xl transition-all duration-300 overflow-hidden"
+              className="bg-[#F1F5F9] border border-slate-200 shadow-[0_4px_20px_rgba(15,23,42,0.04)] rounded-xl transition-all duration-300 overflow-hidden"
             >
               <button
                 onClick={() => toggleFAQ(idx)}
                 type="button"
-                className="w-full flex items-center justify-between p-5 sm:p-6 text-left font-display font-semibold text-sm sm:text-base text-champagne focus:outline-none hover:bg-graphite/60 transition-colors"
+                className="w-full flex items-center justify-between p-5 sm:p-6 text-left font-display font-semibold text-sm sm:text-base text-[#0B0F19] hover:text-[#005BFF] focus:outline-none transition-colors"
               >
                 <span>{faq.q}</span>
                 {isOpen ? (
-                  <ChevronUp className="h-4 w-4 text-champagne shrink-0 ml-4" />
+                  <ChevronUp className="h-4 w-4 text-[#005BFF] shrink-0 ml-4" />
                 ) : (
-                  <ChevronDown className="h-4 w-4 text-champagne shrink-0 ml-4" />
+                  <ChevronDown className="h-4 w-4 text-slate-400 shrink-0 ml-4" />
                 )}
               </button>
               {isOpen && (
-                <div className="p-5 sm:p-6 pt-0 text-xs sm:text-sm text-ivory/80 leading-relaxed border-t border-graphite/60">
+                <div className="p-5 sm:p-6 pt-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-200 bg-white">
                   {faq.a}
                 </div>
               )}

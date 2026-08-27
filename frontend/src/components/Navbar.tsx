@@ -53,7 +53,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   className={`relative text-xs font-semibold uppercase tracking-widest transition-colors duration-200 py-2 ${
-                    active ? 'text-[#0099DD] font-bold' : 'text-slate-700 hover:text-[#0099DD]'
+                    active ? 'text-[#005BFF] font-bold' : 'text-[#0B0F19] hover:text-[#005BFF]'
                   }`}
                 >
                   {link.name}
@@ -81,7 +81,7 @@ export default function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="inline-flex items-center justify-center p-2 text-[#0099DD] hover:text-slate-900 focus:outline-none transition-colors"
+              className="inline-flex items-center justify-center p-2 text-[#005BFF] hover:text-[#0B0F19] focus:outline-none transition-colors"
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >

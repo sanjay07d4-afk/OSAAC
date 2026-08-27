@@ -12,7 +12,7 @@ const config: Config = {
         obsidian: '#F8FAFC',
         champagne: '#00E5FF',
         ivory: '#0B0F19',
-        graphite: '#FFFFFF',
+        graphite: '#F1F5F9',
         mutedgold: '#005BFF',
       },
       fontFamily: {

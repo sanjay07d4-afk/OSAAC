@@ -262,7 +262,7 @@ export default function Home() {
             <Link
               key={service.num}
               href="/services"
-              className="group relative overflow-hidden p-6 sm:p-8 bg-graphite/40 border border-graphite/80 rounded-xl transition-all duration-500 hover:border-champagne/50 hover:bg-graphite/70 hover:shadow-xl hover:shadow-champagne/5 hover:-translate-y-1.5 flex flex-col justify-between space-y-6"
+              className="group relative overflow-hidden p-6 sm:p-8 bg-[#F1F5F9] border border-slate-200 shadow-[0_4px_20px_rgba(15,23,42,0.04)] rounded-xl transition-all duration-300 hover:border-slate-300 hover:shadow-md hover:-translate-y-1 flex flex-col justify-between space-y-6"
             >
               {/* Visual Presentation Element */}
               <div className="w-full">
@@ -272,29 +272,29 @@ export default function Home() {
               {/* Text & Content Block */}
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-champagne/70 bg-obsidian px-2.5 py-1 rounded border border-graphite">
+                  <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#005BFF] bg-white px-2.5 py-1 rounded border border-slate-200">
                     {service.tag}
                   </span>
-                  <span className="text-2xl font-bold font-display text-champagne/30 group-hover:text-champagne transition-colors duration-300">
+                  <span className="text-2xl font-bold font-display text-slate-400 group-hover:text-[#005BFF] transition-colors duration-300">
                     {service.num}
                   </span>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-bold font-display text-champagne group-hover:text-ivory transition-colors duration-300">
+                <h3 className="text-xl sm:text-2xl font-bold font-display text-[#0B0F19] group-hover:text-[#005BFF] transition-colors duration-300">
                   {service.title}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-ivory/60 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   {service.desc}
                 </p>
               </div>
 
               {/* Action Link */}
-              <div className="pt-2 border-t border-graphite/60 flex items-center justify-between">
-                <span className="text-xs font-bold uppercase tracking-widest text-champagne/80 group-hover:text-champagne transition-colors duration-300">
+              <div className="pt-2 border-t border-slate-200 flex items-center justify-between">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#005BFF] group-hover:text-[#00E5FF] transition-colors duration-300">
                   Explore Service
                 </span>
-                <ArrowRight className="h-4 w-4 text-champagne transition-transform group-hover:translate-x-1.5" />
+                <ArrowRight className="h-4 w-4 text-[#005BFF] transition-transform group-hover:translate-x-1.5" />
               </div>
             </Link>
           ))}
@@ -302,9 +302,9 @@ export default function Home() {
       </section>
 
       {/* Company Stats / Trust Metrics Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-graphite/80" aria-label="Company Trust Metrics">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-slate-200" aria-label="Company Trust Metrics">
         <motion.div 
-          className="bg-graphite/40 border border-graphite/80 rounded-xl overflow-hidden shadow-xl shadow-champagne/5"
+          className="bg-[#F1F5F9] border border-slate-200 rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(15,23,42,0.04)]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
@@ -319,7 +319,7 @@ export default function Home() {
             ].map((stat, idx) => (
               <div
                 key={idx}
-                className={`p-6 sm:p-8 md:p-10 text-center flex flex-col justify-center items-center border-graphite/60 ${
+                className={`p-6 sm:p-8 md:p-10 text-center flex flex-col justify-center items-center border-slate-200 ${
                   idx % 2 === 0 ? 'border-r lg:border-r-0' : ''
                 } ${idx < 2 ? 'border-b lg:border-b-0' : ''} ${
                   idx > 0 ? 'lg:border-l' : ''
@@ -329,9 +329,9 @@ export default function Home() {
                   numericValue={stat.numericValue}
                   suffix={stat.suffix}
                   duration={1800}
-                  className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-champagne tracking-tight"
+                  className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-[#0B0F19] tracking-tight"
                 />
-                <span className="text-xs sm:text-sm font-mono font-medium text-ivory/70 uppercase tracking-wider mt-2.5">
+                <span className="text-xs sm:text-sm font-mono font-medium text-slate-600 uppercase tracking-wider mt-2.5">
                   {stat.label}
                 </span>
               </div>
@@ -340,39 +340,36 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Our Process Section — Continuous Flowing / Spiral-Style Connector */}
+      {/* Our Process Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-2xl mx-auto space-y-3 mb-16">
-          <span className="inline-block text-xs font-bold uppercase tracking-widest text-champagne/80">
+          <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#005BFF]">
             How We Work
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display tracking-tight text-[#0B0F19]">
             Our Process
           </h2>
-          <p className="text-sm text-ivory/60 leading-relaxed">
+          <p className="text-sm text-slate-600 leading-relaxed">
             A continuous, transparent progression from concept discovery to live deployment.
           </p>
         </div>
 
-        {/* Desktop Process — Continuous Flowing Wave Connector Linking 01 -> 02 -> 03 -> 04 */}
+        {/* Desktop Process */}
         <div className="hidden lg:block relative pb-4">
-          {/* Continuous Flowing Curved Connector SVG */}
           <svg
             className="absolute top-[88px] left-0 w-full h-32 pointer-events-none z-0"
             viewBox="0 0 1200 120"
             fill="none"
             preserveAspectRatio="none"
           >
-            {/* Background Glow Path */}
             <path
               d="M 150 60 C 275 60, 325 15, 450 15 C 575 15, 625 105, 750 105 C 875 105, 925 60, 1050 60"
-              stroke="#00D2FF"
-              strokeWidth="4"
-              strokeOpacity="0.15"
+              stroke="#00E5FF"
+              strokeWidth="3"
+              strokeOpacity="0.2"
               strokeLinecap="round"
               fill="none"
             />
-            {/* Foreground Animated Dashed Flowing Path */}
             <path
               d="M 150 60 C 275 60, 325 15, 450 15 C 575 15, 625 105, 750 105 C 875 105, 925 60, 1050 60"
               stroke="url(#processGradientFlow)"
@@ -382,13 +379,12 @@ export default function Home() {
               className="animate-flow-dash"
               fill="none"
             />
-            {/* Gradient definition */}
             <defs>
               <linearGradient id="processGradientFlow" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#00D2FF" stopOpacity="0.4" />
-                <stop offset="33%" stopColor="#00D2FF" stopOpacity="0.9" />
-                <stop offset="66%" stopColor="#00D2FF" stopOpacity="0.9" />
-                <stop offset="100%" stopColor="#00D2FF" stopOpacity="0.4" />
+                <stop offset="0%" stopColor="#00E5FF" stopOpacity="0.4" />
+                <stop offset="33%" stopColor="#00E5FF" stopOpacity="0.8" />
+                <stop offset="66%" stopColor="#00E5FF" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#00E5FF" stopOpacity="0.4" />
               </linearGradient>
             </defs>
           </svg>
@@ -398,31 +394,31 @@ export default function Home() {
             {steps.map((step, idx) => (
               <div
                 key={step.num}
-                className="relative p-6 sm:p-7 bg-graphite/60 border border-graphite rounded-xl space-y-4 hover:border-champagne/50 hover:bg-graphite/80 transition-all duration-300 flex flex-col justify-between"
+                className="relative p-6 sm:p-7 bg-[#F1F5F9] border border-slate-200 shadow-[0_4px_20px_rgba(15,23,42,0.04)] rounded-xl space-y-4 hover:border-slate-300 transition-all duration-300 flex flex-col justify-between"
               >
                 {/* Node Top Indicator */}
-                <div className="flex items-center justify-between pb-2 border-b border-graphite/60">
+                <div className="flex items-center justify-between pb-2 border-b border-slate-200">
                   <div className="flex items-center space-x-2">
-                    <span className="w-3 h-3 rounded-full bg-champagne ring-4 ring-champagne/20 flex items-center justify-center text-[8px] font-bold text-obsidian" />
-                    <span className="text-xs font-mono font-bold uppercase tracking-widest text-champagne">
+                    <span className="w-3 h-3 rounded-full bg-[#00E5FF] ring-4 ring-[#00E5FF]/20 flex items-center justify-center text-[8px] font-bold text-slate-950" />
+                    <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#005BFF]">
                       Stage {step.num}
                     </span>
                   </div>
-                  <span className="text-2xl font-bold font-display text-champagne/20">
+                  <span className="text-2xl font-bold font-display text-slate-300">
                     {step.num}
                   </span>
                 </div>
 
                 <div className="space-y-2">
-                  <h3 className="text-lg font-bold font-display text-champagne">
+                  <h3 className="text-lg font-bold font-display text-[#0B0F19]">
                     {step.title}
                   </h3>
-                  <p className="text-xs text-ivory/60 leading-relaxed">
+                  <p className="text-xs text-slate-600 leading-relaxed">
                     {step.desc}
                   </p>
                 </div>
 
-                <div className="pt-2 text-[10px] font-mono text-champagne/50 uppercase">
+                <div className="pt-2 text-[10px] font-mono text-[#005BFF] uppercase">
                   {idx < steps.length - 1 ? `Proceeds to 0${idx + 2} →` : 'Production Ready ✔'}
                 </div>
               </div>
