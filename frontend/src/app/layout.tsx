@@ -3,6 +3,7 @@ import { Inter, Outfit } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import OSAACIntro from '@/components/OSAACIntro';
 import './globals.css';
 
 const inter = Inter({
@@ -72,7 +73,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable} scroll-smooth`}>
-      <body className="bg-obsidian text-ivory font-sans flex flex-col min-h-screen">
+      <body className="bg-[#0a0f1a] text-[#f1f5f9] font-sans flex flex-col min-h-screen selection:bg-[#3b82f6]/30 selection:text-white">
+        <OSAACIntro />
         <Navbar />
         <main className="flex-grow">
           {children}

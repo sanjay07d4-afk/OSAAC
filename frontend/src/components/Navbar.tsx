@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
+import StartProjectButton from '@/components/StartProjectButton';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +28,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-[#F8FAFC]/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300">
+    <header className="fixed top-0 left-0 w-full z-50 bg-[#0a0f1a]/85 backdrop-blur-md border-b border-white/[0.08] shadow-sm transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-[72px] sm:h-[76px]">
           {/* Official OSAAC Logo — Constrained Container & Proportions */}
@@ -53,12 +54,12 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   className={`relative text-xs font-semibold uppercase tracking-widest transition-colors duration-200 py-2 ${
-                    active ? 'text-[#005BFF] font-bold' : 'text-[#0B0F19] hover:text-[#005BFF]'
+                    active ? 'text-[#3b82f6] font-bold' : 'text-[#94a3b8] hover:text-[#60a5fa]'
                   }`}
                 >
                   {link.name}
                   {active && (
-                    <span className="absolute bottom-0 left-0 w-full h-[2px] bg-champagne rounded-full" />
+                    <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#3b82f6] rounded-full" />
                   )}
                 </Link>
               );
@@ -67,13 +68,12 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden md:block">
-            <Link
+            <StartProjectButton
               href="/start-project"
-              className="inline-flex items-center justify-center px-5 py-2.5 text-xs font-bold uppercase tracking-widest text-slate-950 bg-champagne border border-champagne rounded-sm transition-all duration-300 hover:bg-mutedgold hover:border-mutedgold shadow-sm shadow-champagne/20 hover:-translate-y-0.5"
+              className="px-5 py-2 text-xs"
             >
-              START YOUR PROJECT
-              <ArrowUpRight className="ml-1.5 h-3.5 w-3.5" />
-            </Link>
+              Start Project
+            </StartProjectButton>
           </div>
 
           {/* Mobile Hamburger Button */}
@@ -81,7 +81,7 @@ export default function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="inline-flex items-center justify-center p-2 text-[#005BFF] hover:text-[#0B0F19] focus:outline-none transition-colors"
+              className="inline-flex items-center justify-center p-2 text-[#3b82f6] hover:text-[#f1f5f9] focus:outline-none transition-colors"
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >
@@ -94,7 +94,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Panel */}
       {isOpen && (
-        <div className="md:hidden bg-white border-b border-slate-200 animate-fade-in shadow-lg" id="mobile-menu">
+        <div className="md:hidden bg-[#0a0f1a] border-b border-white/[0.08] animate-fade-in shadow-xl" id="mobile-menu">
           <div className="px-4 pt-3 pb-6 space-y-2">
             {navLinks.map((link) => {
               const active = isActive(link.href);
@@ -104,7 +104,7 @@ export default function Navbar() {
                   href={link.href}
                   onClick={() => setIsOpen(false)}
                   className={`block px-3 py-2.5 text-sm font-semibold uppercase tracking-widest rounded-sm transition-colors duration-200 ${
-                    active ? 'text-[#0099DD] bg-slate-100 font-bold border-l-2 border-champagne' : 'text-slate-700 hover:text-[#0099DD] hover:bg-slate-50'
+                    active ? 'text-[#3b82f6] bg-[#111827] font-bold border-l-2 border-[#3b82f6]' : 'text-[#94a3b8] hover:text-[#f1f5f9] hover:bg-[#111827]/50'
                   }`}
                 >
                   {link.name}
@@ -112,14 +112,14 @@ export default function Navbar() {
               );
             })}
             <div className="pt-4">
-              <Link
+              <StartProjectButton
                 href="/start-project"
                 onClick={() => setIsOpen(false)}
-                className="flex items-center justify-center w-full px-5 py-3 text-xs font-bold uppercase tracking-widest text-slate-950 bg-champagne rounded-sm hover:bg-mutedgold transition-all duration-300"
+                fullWidth
+                className="py-3 text-xs"
               >
-                START YOUR PROJECT
-                <ArrowUpRight className="ml-1.5 h-4 w-4" />
-              </Link>
+                Start Project
+              </StartProjectButton>
             </div>
           </div>
         </div>

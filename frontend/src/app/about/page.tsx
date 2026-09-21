@@ -22,7 +22,7 @@ export default function About() {
   };
 
   return (
-    <div className="bg-obsidian text-ivory py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#0a0f1a] text-[#f1f5f9] py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
       <motion.div 
         className="max-w-4xl mx-auto space-y-16"
         initial="hidden"
@@ -31,19 +31,19 @@ export default function About() {
       >
         {/* Header Block */}
         <motion.div variants={itemVariants} className="text-center space-y-4">
-          <span className="inline-block text-xs font-bold uppercase tracking-widest text-champagne/80">
+          <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#3b82f6]">
             Company Overview
           </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-display tracking-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-display tracking-tight text-[#f1f5f9]">
             About OSAAC
           </h1>
-          <p className="text-lg text-champagne tracking-wide max-w-xl mx-auto font-light">
+          <p className="text-lg text-[#60a5fa] tracking-wide max-w-xl mx-auto font-light">
             Digital Solutions. Real Transformation.
           </p>
         </motion.div>
 
         {/* Intro Copy */}
-        <motion.div variants={itemVariants} className="space-y-6 text-sm sm:text-base text-ivory/80 leading-relaxed bg-graphite/40 p-8 sm:p-10 border border-graphite/80 rounded-xl">
+        <motion.div variants={itemVariants} className="space-y-6 text-sm sm:text-base text-[#94a3b8] leading-relaxed bg-[#111827] p-8 sm:p-10 border border-white/[0.08] rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
           <p>
             OSAAC is dedicated to engineering practical, modern digital transformations. 
             We build and deliver software and brands tailored to help businesses optimize operations 
@@ -59,34 +59,34 @@ export default function About() {
 
         {/* Core Focal Areas */}
         <motion.div variants={itemVariants} className="space-y-8">
-          <h2 className="text-2xl sm:text-3xl font-bold font-display text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold font-display text-center text-[#f1f5f9]">
             Our Core Competencies
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 bg-graphite/40 border border-graphite/80 rounded-xl space-y-3">
-              <h3 className="text-lg font-bold font-display text-champagne">Modern Web Development</h3>
-              <p className="text-xs text-ivory/60 leading-relaxed">
+            <div className="p-6 bg-[#111827] border border-white/[0.08] rounded-xl space-y-3 shadow-[0_4px_20px_rgba(0,0,0,0.2)]">
+              <h3 className="text-lg font-bold font-display text-[#3b82f6]">Modern Web Development</h3>
+              <p className="text-xs text-[#94a3b8] leading-relaxed">
                 Building responsive web systems using modern framework technology (like React, Next.js, and Node.js) 
                 which scale cleanly as your business grows.
               </p>
             </div>
-            <div className="p-6 bg-graphite/40 border border-graphite/80 rounded-xl space-y-3">
-              <h3 className="text-lg font-bold font-display text-champagne">Business Websites</h3>
-              <p className="text-xs text-ivory/60 leading-relaxed">
+            <div className="p-6 bg-[#111827] border border-white/[0.08] rounded-xl space-y-3 shadow-[0_4px_20px_rgba(0,0,0,0.2)]">
+              <h3 className="text-lg font-bold font-display text-[#3b82f6]">Business Websites</h3>
+              <p className="text-xs text-[#94a3b8] leading-relaxed">
                 Custom commercial web sites optimized for fast conversions, search visibility (SEO), 
                 and accessible screen reading.
               </p>
             </div>
-            <div className="p-6 bg-graphite/40 border border-graphite/80 rounded-xl space-y-3">
-              <h3 className="text-lg font-bold font-display text-champagne">AI Automation</h3>
-              <p className="text-xs text-ivory/60 leading-relaxed">
+            <div className="p-6 bg-[#111827] border border-white/[0.08] rounded-xl space-y-3 shadow-[0_4px_20px_rgba(0,0,0,0.2)]">
+              <h3 className="text-lg font-bold font-display text-[#3b82f6]">AI Automation</h3>
+              <p className="text-xs text-[#94a3b8] leading-relaxed">
                 Integrating AI workflow triggers, lead auto-responders, data processing flows, and WhatsApp 
                 automation to reduce manual overhead.
               </p>
             </div>
-            <div className="p-6 bg-graphite/40 border border-graphite/80 rounded-xl space-y-3">
-              <h3 className="text-lg font-bold font-display text-champagne">Brand Identity</h3>
-              <p className="text-xs text-ivory/60 leading-relaxed">
+            <div className="p-6 bg-[#111827] border border-white/[0.08] rounded-xl space-y-3 shadow-[0_4px_20px_rgba(0,0,0,0.2)]">
+              <h3 className="text-lg font-bold font-display text-[#3b82f6]">Brand Identity</h3>
+              <p className="text-xs text-[#94a3b8] leading-relaxed">
                 Designing logos, typography guides, and customized corporate styles that visually separate 
                 your identity from competitors.
               </p>
@@ -95,31 +95,31 @@ export default function About() {
         </motion.div>
 
         {/* Values Block */}
-        <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-graphite/60 text-center">
+        <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-white/[0.08] text-center">
           <div className="space-y-3 p-4">
-            <div className="inline-flex p-3 bg-graphite rounded-full text-champagne mb-1 border border-graphite">
+            <div className="inline-flex p-3 bg-[#0a0f1a] rounded-full text-[#3b82f6] mb-1 border border-white/[0.08]">
               <Target className="h-6 w-6" />
             </div>
-            <h3 className="text-sm font-mono font-bold text-champagne uppercase tracking-wider">Mission</h3>
-            <p className="text-xs text-ivory/65 leading-relaxed">
+            <h3 className="text-sm font-mono font-bold text-[#3b82f6] uppercase tracking-wider">Mission</h3>
+            <p className="text-xs text-[#94a3b8] leading-relaxed">
               To deliver functional digital tools and custom automation that result in real business efficiency.
             </p>
           </div>
           <div className="space-y-3 p-4">
-            <div className="inline-flex p-3 bg-graphite rounded-full text-champagne mb-1 border border-graphite">
+            <div className="inline-flex p-3 bg-[#0a0f1a] rounded-full text-[#3b82f6] mb-1 border border-white/[0.08]">
               <Eye className="h-6 w-6" />
             </div>
-            <h3 className="text-sm font-mono font-bold text-champagne uppercase tracking-wider">Vision</h3>
-            <p className="text-xs text-ivory/65 leading-relaxed">
+            <h3 className="text-sm font-mono font-bold text-[#3b82f6] uppercase tracking-wider">Vision</h3>
+            <p className="text-xs text-[#94a3b8] leading-relaxed">
               To build modern, secure, and future-ready digital products that stand the test of time.
             </p>
           </div>
           <div className="space-y-3 p-4">
-            <div className="inline-flex p-3 bg-graphite rounded-full text-champagne mb-1 border border-graphite">
+            <div className="inline-flex p-3 bg-[#0a0f1a] rounded-full text-[#3b82f6] mb-1 border border-white/[0.08]">
               <Shield className="h-6 w-6" />
             </div>
-            <h3 className="text-sm font-mono font-bold text-champagne uppercase tracking-wider">Integrity</h3>
-            <p className="text-xs text-ivory/65 leading-relaxed">
+            <h3 className="text-sm font-mono font-bold text-[#3b82f6] uppercase tracking-wider">Integrity</h3>
+            <p className="text-xs text-[#94a3b8] leading-relaxed">
               Strictly representing what is actually completed and tested, never fabricating testimonials or statistics.
             </p>
           </div>

@@ -2,10 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --osaac-bg: #0a0f1a;
+  --osaac-bg-secondary: #111827;
+
+  --osaac-primary: #3b82f6;
+  --osaac-primary-light: #60a5fa;
+  --osaac-primary-dark: #2563eb;
+
+  --osaac-text: #f1f5f9;
+  --osaac-text-secondary: #94a3b8;
+  --osaac-text-muted: #64748b;
+
+  --osaac-border: rgba(255, 255, 255, 0.08);
+
+  --osaac-glow: rgba(59, 130, 246, 0.35);
+  --osaac-glow-hover: rgba(59, 130, 246, 0.45);
+}
+
 @layer base {
   body {
-    background-color: #F8FAFC; /* Premium Off-White Base */
-    color: #0B0F19; /* Deep Navy Primary Text */
+    background-color: #0a0f1a; /* OSAAC Dark Base */
+    color: #f1f5f9; /* Primary Text */
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -13,13 +31,13 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Outfit', sans-serif;
-    color: #0B0F19; /* Deep Navy Heading Text */
+    color: #f1f5f9; /* Primary Heading Text */
     font-weight: 600;
   }
 
-  /* Custom focus ring matching the brand cyan */
+  /* Custom focus ring matching OSAAC brand blue */
   :focus-visible {
-    outline: 2px solid #00E5FF;
+    outline: 2px solid #3b82f6;
     outline-offset: 2px;
   }
 }
@@ -27,6 +45,7 @@
 /* Custom transitions and scroll behavior */
 html {
   scroll-behavior: smooth;
+  background-color: #0a0f1a;
 }
 
 /* Premium Custom Scrollbar */
@@ -34,14 +53,14 @@ html {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F8FAFC;
+  background: #0a0f1a;
 }
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
+  background: #1e293b;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #00E5FF;
+  background: #3b82f6;
 }
 
 /* Flowing connector stroke animation */
@@ -82,3 +101,244 @@ html {
     opacity: 1;
   }
 }
+
+/* ==========================================================================
+   OSAAC 3D Iridescent Neumorphic Start Project Button
+   Adapted from reference implementation with deep navy-blue aesthetic
+   Scoped STRICTLY to .osaac-start-project-btn
+   ========================================================================== */
+
+:root {
+  --osaac-btn-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+  --osaac-btn-cubic-in: cubic-bezier(0.32, 0, 0.67, 0);
+  --osaac-btn-cubic-out: cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.osaac-start-project-btn {
+  --osaac-btn-navy: #0b1f3a;
+  --osaac-btn-navy-dark: #071426;
+  --osaac-btn-blue: #123a66;
+  --osaac-btn-highlight: #1d4f82;
+  --osaac-btn-accent: #3b82f6;
+  --osaac-btn-glow: #60a5fa;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f8fafc;
+  padding: 0.85rem 1.75rem;
+  min-height: 44px;
+  line-height: 1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+  border-radius: 9999px;
+  cursor: pointer;
+  user-select: none;
+  isolation: isolate;
+  
+  --brdr: 1.5px;
+  border: var(--brdr) solid transparent;
+  
+  background: 
+    linear-gradient(180deg, #102a4e 0%, #0b1f3a 50%, #071426 100%) padding-box,
+    linear-gradient(165deg, rgba(96, 165, 250, 0.55) 0%, rgba(59, 130, 246, 0.3) 40%, rgba(18, 58, 102, 0.5) 100%) border-box;
+
+  --btn-inset-shadow:
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.25),
+    inset 0 -2px 4px 0 rgba(0, 0, 0, 0.7),
+    inset -2px -2px 4px 0 rgba(7, 20, 38, 0.85),
+    inset 2px 2px 4px 0 rgba(59, 130, 246, 0.25);
+
+  --btn-outer-shadow:
+    0 4px 14px 0 rgba(0, 0, 0, 0.55),
+    0 2px 6px 0 rgba(7, 20, 38, 0.6),
+    0 0 1px 1px rgba(59, 130, 246, 0.2);
+
+  box-shadow: var(--btn-inset-shadow), var(--btn-outer-shadow);
+  transition: all 0.35s var(--osaac-btn-cubic-out);
+}
+
+.osaac-start-project-btn:has(.drop-shadow) {
+  box-shadow: var(--btn-inset-shadow);
+}
+
+/* Multi-layered 3D pseudo-elements */
+.osaac-start-project-btn::before,
+.osaac-start-project-btn::after,
+.osaac-start-project-btn .drop-shadow,
+.osaac-start-project-btn .drop-shadow::after,
+.osaac-start-project-btn .drop-shadow::before {
+  content: "";
+  position: absolute;
+  inset: min(-2px, calc(var(--brdr) * -1));
+  border-radius: inherit;
+  pointer-events: none;
+  transition: all 0.6s var(--osaac-btn-cubic-in);
+}
+
+/* Layer: Top rim refraction */
+.osaac-start-project-btn::after {
+  opacity: 0.35;
+  background: transparent;
+  box-shadow: 
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -2px 3px 0 rgba(59, 130, 246, 0.2),
+    inset 0 -4px 8px 0 rgba(18, 58, 102, 0.3);
+  mix-blend-mode: overlay;
+  z-index: 2;
+}
+
+/* Layer: Base outer shadow */
+.osaac-start-project-btn .drop-shadow {
+  box-shadow: var(--btn-outer-shadow);
+  z-index: -2;
+}
+
+/* Layer: Refraction & iridescent sweep across navy surface */
+.osaac-start-project-btn::before {
+  opacity: 0;
+  translate: 1.2em 0em;
+  scale: 0.85;
+  background: linear-gradient(
+    105deg,
+    rgba(18, 58, 102, 0) 0%,
+    rgba(29, 79, 130, 0.45) 25%,
+    rgba(59, 130, 246, 0.7) 50%,
+    rgba(96, 165, 250, 0.85) 68%,
+    rgba(147, 197, 253, 0.95) 78%,
+    rgba(59, 130, 246, 0.5) 90%,
+    rgba(18, 58, 102, 0) 100%
+  );
+  -webkit-mask: linear-gradient(170deg, transparent 35%, black 85%);
+  mask: linear-gradient(170deg, transparent 35%, black 85%);
+  filter: blur(3px) brightness(1.15) contrast(1.2);
+  box-shadow: 
+    inset 0 -2px 4px rgba(96, 165, 250, 0.35),
+    inset 0 1px 2px rgba(255, 255, 255, 0.2);
+  z-index: 3;
+}
+
+/* Layer: Soft ambient underglow */
+.osaac-start-project-btn .drop-shadow::after {
+  opacity: 0;
+  translate: -0.2em 0.5em;
+  scale: 1;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(59, 130, 246, 0.45) 0%,
+    rgba(29, 79, 130, 0.2) 50%,
+    rgba(7, 20, 38, 0) 75%
+  );
+  filter: blur(6px) brightness(1.2);
+  mix-blend-mode: screen;
+  z-index: -2;
+}
+
+/* Layer: Ambient ground depth shadow */
+.osaac-start-project-btn .drop-shadow::before {
+  opacity: 0.75;
+  translate: 0 3px;
+  scale: 0.95 0.75;
+  background: rgba(7, 20, 38, 0.75);
+  filter: blur(4px);
+  z-index: -1;
+}
+
+/* Hover & Shine States */
+.osaac-start-project-btn:hover,
+.osaac-start-project-btn.shine {
+  color: #ffffff;
+  transform: translateY(-1.5px);
+  background: 
+    linear-gradient(180deg, #143562 0%, #0d274a 50%, #081930 100%) padding-box,
+    linear-gradient(165deg, rgba(147, 197, 253, 0.8) 0%, rgba(59, 130, 246, 0.55) 45%, rgba(29, 79, 130, 0.75) 100%) border-box;
+
+  --btn-outer-shadow:
+    0 8px 22px 0 rgba(7, 20, 38, 0.75),
+    0 3px 8px 0 rgba(59, 130, 246, 0.35),
+    0 0 14px 2px rgba(59, 130, 246, 0.25);
+
+  --btn-inset-shadow:
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -2px 5px 0 rgba(0, 0, 0, 0.55),
+    inset -2px -2px 5px 0 rgba(7, 20, 38, 0.7),
+    inset 2px 2px 5px 0 rgba(96, 165, 250, 0.35);
+
+  box-shadow: var(--btn-inset-shadow), var(--btn-outer-shadow);
+}
+
+.osaac-start-project-btn:hover:has(.drop-shadow),
+.osaac-start-project-btn.shine:has(.drop-shadow) {
+  box-shadow: var(--btn-inset-shadow);
+}
+
+.osaac-start-project-btn:hover::before,
+.osaac-start-project-btn:hover::after,
+.osaac-start-project-btn:hover .drop-shadow,
+.osaac-start-project-btn:hover .drop-shadow::after,
+.osaac-start-project-btn:hover .drop-shadow::before,
+.osaac-start-project-btn.shine::before,
+.osaac-start-project-btn.shine::after,
+.osaac-start-project-btn.shine .drop-shadow,
+.osaac-start-project-btn.shine .drop-shadow::after,
+.osaac-start-project-btn.shine .drop-shadow::before {
+  transition-duration: 0.35s;
+  transition-timing-function: var(--osaac-btn-cubic-out);
+}
+
+.osaac-start-project-btn:hover::after,
+.osaac-start-project-btn.shine::after {
+  opacity: 0.7;
+}
+
+.osaac-start-project-btn:hover::before,
+.osaac-start-project-btn.shine::before {
+  opacity: 0.85;
+  translate: 0em 0em;
+  scale: 1;
+}
+
+.osaac-start-project-btn:hover .drop-shadow::after,
+.osaac-start-project-btn.shine .drop-shadow::after {
+  opacity: 0.75;
+  translate: 0em 0.35em;
+  scale: 1.15 0.8;
+}
+
+/* Keyboard focus */
+.osaac-start-project-btn:focus-visible {
+  outline: 2px solid #60a5fa !important;
+  outline-offset: 3px !important;
+}
+
+/* Active / Pressed physical click state */
+.osaac-start-project-btn:active {
+  transform: translateY(1.5px) !important;
+  transition: all 0.1s var(--osaac-btn-cubic-out);
+
+  --btn-outer-shadow:
+    0 2px 5px 0 rgba(7, 20, 38, 0.85),
+    0 1px 2px 0 rgba(0, 0, 0, 0.5);
+
+  --btn-inset-shadow:
+    inset 0 3px 6px 0 rgba(0, 0, 0, 0.75),
+    inset 0 -1px 2px 0 rgba(255, 255, 255, 0.1),
+    inset 2px 2px 4px 0 rgba(7, 20, 38, 0.9);
+
+  box-shadow: var(--btn-inset-shadow), var(--btn-outer-shadow);
+}
+
+.osaac-start-project-btn:active:has(.drop-shadow) {
+  box-shadow: var(--btn-inset-shadow);
+}
+
+.osaac-start-project-btn:active::after {
+  opacity: 0.9;
+  transition: all 0.1s var(--osaac-btn-cubic-out);
+}
+

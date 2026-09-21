@@ -9,11 +9,24 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        obsidian: '#F8FAFC',
-        champagne: '#00E5FF',
-        ivory: '#0B0F19',
-        graphite: '#F1F5F9',
-        mutedgold: '#005BFF',
+        // Authoritative OSAAC Color Palette
+        'osaac-bg': '#0a0f1a',
+        'osaac-bg-secondary': '#111827',
+        'osaac-primary': '#3b82f6',
+        'osaac-primary-light': '#60a5fa',
+        'osaac-primary-dark': '#2563eb',
+        'osaac-text': '#f1f5f9',
+        'osaac-text-secondary': '#94a3b8',
+        'osaac-text-muted': '#64748b',
+        'osaac-border': 'rgba(255, 255, 255, 0.08)',
+        'osaac-glow': 'rgba(59, 130, 246, 0.35)',
+
+        // Semantic aliases for existing classes
+        obsidian: '#0a0f1a',
+        graphite: '#111827',
+        champagne: '#3b82f6',
+        mutedgold: '#2563eb',
+        ivory: '#f1f5f9',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

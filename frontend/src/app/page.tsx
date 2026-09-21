@@ -2,8 +2,10 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, ArrowUpRight, Code, Cpu, Palette, LayoutDashboard, Terminal, CheckCircle2, Sparkles } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Code, Cpu, Palette, Smartphone, Terminal, CheckCircle2, Sparkles } from 'lucide-react';
 import AnimatedCounter from '@/components/AnimatedCounter';
+import InteractiveNeuralNetwork from '@/components/InteractiveNeuralNetwork';
+import StartProjectButton from '@/components/StartProjectButton';
 
 export default function Home() {
   const containerVariants = {
@@ -30,23 +32,23 @@ export default function Home() {
       desc: 'Custom websites and digital platforms engineered for performance, security, responsiveness, and scalability.',
       tag: 'Core Engineering',
       visual: (
-        <div className="w-full h-44 bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-lg p-3.5 relative overflow-hidden flex flex-col justify-between group-hover:border-champagne/60 transition-colors duration-500">
-          <div className="flex items-center justify-between border-b border-graphite/80 pb-2">
+        <div className="w-full h-44 bg-gradient-to-br from-[#111827] to-[#0a0f1a] border border-white/[0.08] rounded-lg p-3.5 relative overflow-hidden flex flex-col justify-between group-hover:border-[#3b82f6]/50 transition-colors duration-500">
+          <div className="flex items-center justify-between border-b border-white/[0.08] pb-2">
             <div className="flex items-center space-x-1.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-champagne/40" />
-              <span className="w-2.5 h-2.5 rounded-full bg-champagne/20" />
-              <span className="w-2.5 h-2.5 rounded-full bg-champagne/20" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#3b82f6]/60" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#3b82f6]/30" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#3b82f6]/30" />
             </div>
-            <span className="text-[10px] font-mono text-champagne/60 tracking-wider">osaac.tech/app.tsx</span>
+            <span className="text-[10px] font-mono text-[#60a5fa]/70 tracking-wider">osaac.tech/app.tsx</span>
           </div>
-          <div className="font-mono text-[11px] text-ivory/60 space-y-1 py-1">
-            <p className="text-champagne/80"><span className="text-ivory/40">const</span> system = <span className="text-champagne">createPlatform</span>({'{'}</p>
-            <p className="pl-3 text-ivory/70">performance: <span className="text-champagne/90">'100/100'</span>,</p>
-            <p className="pl-3 text-ivory/70">responsive: <span className="text-champagne/90">true</span></p>
-            <p className="text-champagne/80">{'}'});</p>
+          <div className="font-mono text-[11px] text-[#94a3b8] space-y-1 py-1">
+            <p className="text-[#60a5fa]"><span className="text-[#64748b]">const</span> system = <span className="text-[#3b82f6]">createPlatform</span>({'{'}</p>
+            <p className="pl-3 text-[#94a3b8]">performance: <span className="text-[#60a5fa]">'100/100'</span>,</p>
+            <p className="pl-3 text-[#94a3b8]">responsive: <span className="text-[#60a5fa]">true</span></p>
+            <p className="text-[#60a5fa]">{'}'});</p>
           </div>
-          <div className="flex items-center justify-between pt-2 border-t border-graphite/60 text-[10px] text-champagne/70 font-mono">
-            <span className="flex items-center gap-1"><Code className="w-3 h-3 text-champagne" /> Next.js / TypeScript</span>
+          <div className="flex items-center justify-between pt-2 border-t border-white/[0.08] text-[10px] text-[#60a5fa]/80 font-mono">
+            <span className="flex items-center gap-1"><Code className="w-3 h-3 text-[#3b82f6]" /> Next.js / TypeScript</span>
             <span className="text-emerald-400 font-semibold flex items-center gap-1"><CheckCircle2 className="w-2.5 h-2.5" /> Production Ready</span>
           </div>
         </div>
@@ -58,32 +60,32 @@ export default function Home() {
       desc: 'Intelligent workflow automation, lead processing, and business system integrations tailored to your operations.',
       tag: 'Workflow Intelligence',
       visual: (
-        <div className="w-full h-44 bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-lg p-3.5 relative overflow-hidden flex flex-col justify-between group-hover:border-champagne/60 transition-colors duration-500">
-          <div className="flex items-center justify-between border-b border-graphite/80 pb-2">
+        <div className="w-full h-44 bg-gradient-to-br from-[#111827] to-[#0a0f1a] border border-white/[0.08] rounded-lg p-3.5 relative overflow-hidden flex flex-col justify-between group-hover:border-[#3b82f6]/50 transition-colors duration-500">
+          <div className="flex items-center justify-between border-b border-white/[0.08] pb-2">
             <div className="flex items-center space-x-1.5">
-              <Cpu className="w-3.5 h-3.5 text-champagne" />
-              <span className="text-[10px] font-mono text-champagne/80 font-bold uppercase tracking-wider">AI Pipeline</span>
+              <Cpu className="w-3.5 h-3.5 text-[#3b82f6]" />
+              <span className="text-[10px] font-mono text-[#60a5fa] font-bold uppercase tracking-wider">AI Pipeline</span>
             </div>
-            <span className="text-[9px] px-2 py-0.5 rounded-full bg-champagne/10 text-champagne border border-champagne/20">Automated</span>
+            <span className="text-[9px] px-2 py-0.5 rounded-full bg-[#3b82f6]/10 text-[#60a5fa] border border-[#3b82f6]/20">Automated</span>
           </div>
           <div className="grid grid-cols-3 gap-2 py-2 text-center">
-            <div className="bg-obsidian/70 p-2 rounded border border-graphite text-[10px]">
-              <span className="text-ivory/40 block text-[8px] uppercase">Input</span>
-              <span className="text-champagne font-mono font-bold">New Lead</span>
+            <div className="bg-[#0a0f1a]/90 p-2 rounded border border-white/[0.06] text-[10px]">
+              <span className="text-[#64748b] block text-[8px] uppercase">Input</span>
+              <span className="text-[#60a5fa] font-mono font-bold">New Lead</span>
             </div>
-            <div className="bg-obsidian/70 p-2 rounded border border-champagne/30 text-[10px] relative">
-              <span className="text-champagne block text-[8px] uppercase font-bold">Process</span>
-              <span className="text-ivory font-mono font-bold">AI Filter</span>
-              <span className="absolute -top-1 -right-1 w-2 h-2 bg-champagne rounded-full animate-ping" />
+            <div className="bg-[#0a0f1a]/90 p-2 rounded border border-[#3b82f6]/30 text-[10px] relative">
+              <span className="text-[#3b82f6] block text-[8px] uppercase font-bold">Process</span>
+              <span className="text-[#f1f5f9] font-mono font-bold">AI Filter</span>
+              <span className="absolute -top-1 -right-1 w-2 h-2 bg-[#3b82f6] rounded-full animate-ping" />
             </div>
-            <div className="bg-obsidian/70 p-2 rounded border border-graphite text-[10px]">
-              <span className="text-ivory/40 block text-[8px] uppercase">Output</span>
-              <span className="text-champagne font-mono font-bold">WhatsApp</span>
+            <div className="bg-[#0a0f1a]/90 p-2 rounded border border-white/[0.06] text-[10px]">
+              <span className="text-[#64748b] block text-[8px] uppercase">Output</span>
+              <span className="text-[#60a5fa] font-mono font-bold">WhatsApp</span>
             </div>
           </div>
-          <div className="flex items-center justify-between pt-2 border-t border-graphite/60 text-[10px] text-ivory/60 font-mono">
+          <div className="flex items-center justify-between pt-2 border-t border-white/[0.08] text-[10px] text-[#94a3b8] font-mono">
             <span>Latency: &lt;150ms</span>
-            <span className="text-champagne flex items-center gap-1"><Sparkles className="w-3 h-3 text-champagne" /> 24/7 Active</span>
+            <span className="text-[#3b82f6] flex items-center gap-1"><Sparkles className="w-3 h-3 text-[#3b82f6]" /> 24/7 Active</span>
           </div>
         </div>
       )
@@ -94,32 +96,32 @@ export default function Home() {
       desc: 'Memorable brand visuals, logo systems, typography kits, and complete identity packages that set you apart.',
       tag: 'Brand Architecture',
       visual: (
-        <div className="w-full h-44 bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-lg p-3.5 relative overflow-hidden flex flex-col justify-between group-hover:border-champagne/60 transition-colors duration-500">
-          <div className="flex items-center justify-between border-b border-graphite/80 pb-2">
+        <div className="w-full h-44 bg-gradient-to-br from-[#111827] to-[#0a0f1a] border border-white/[0.08] rounded-lg p-3.5 relative overflow-hidden flex flex-col justify-between group-hover:border-[#3b82f6]/50 transition-colors duration-500">
+          <div className="flex items-center justify-between border-b border-white/[0.08] pb-2">
             <div className="flex items-center space-x-1.5">
-              <Palette className="w-3.5 h-3.5 text-champagne" />
-              <span className="text-[10px] font-mono text-champagne/80 font-bold uppercase tracking-wider">Identity Kit</span>
+              <Palette className="w-3.5 h-3.5 text-[#3b82f6]" />
+              <span className="text-[10px] font-mono text-[#60a5fa] font-bold uppercase tracking-wider">Identity Kit</span>
             </div>
-            <span className="text-[9px] text-ivory/40 font-mono">Vector / Tokens</span>
+            <span className="text-[9px] text-[#64748b] font-mono">Vector / Tokens</span>
           </div>
           <div className="flex items-center justify-around py-2">
             <div className="space-y-1 text-center">
-              <div className="w-12 h-10 border border-champagne/40 rounded flex items-center justify-center bg-obsidian text-champagne font-display font-bold text-lg">
+              <div className="w-12 h-10 border border-[#3b82f6]/40 rounded flex items-center justify-center bg-[#0a0f1a] text-[#3b82f6] font-display font-bold text-lg">
                 O
               </div>
-              <span className="text-[8px] text-ivory/50 font-mono uppercase">Monogram</span>
+              <span className="text-[8px] text-[#94a3b8] font-mono uppercase">Monogram</span>
             </div>
             <div className="space-y-1.5">
               <div className="flex items-center space-x-1.5">
-                <div className="w-4 h-4 rounded bg-[#0B0B0F] border border-graphite" title="Obsidian" />
-                <div className="w-4 h-4 rounded bg-[#00D2FF]" title="Cyan Accent" />
-                <div className="w-4 h-4 rounded bg-[#F5F1E8]" title="Warm Ivory" />
-                <div className="w-4 h-4 rounded bg-[#24242B]" title="Graphite" />
+                <div className="w-4 h-4 rounded bg-[#0a0f1a] border border-white/10" title="OSAAC Base" />
+                <div className="w-4 h-4 rounded bg-[#3b82f6]" title="Primary Blue" />
+                <div className="w-4 h-4 rounded bg-[#60a5fa]" title="Light Blue" />
+                <div className="w-4 h-4 rounded bg-[#111827]" title="Secondary BG" />
               </div>
-              <span className="text-[8px] text-ivory/50 font-mono block text-center">Color Palette</span>
+              <span className="text-[8px] text-[#94a3b8] font-mono block text-center">Color Palette</span>
             </div>
           </div>
-          <div className="flex items-center justify-between pt-2 border-t border-graphite/60 text-[10px] text-champagne/70 font-mono">
+          <div className="flex items-center justify-between pt-2 border-t border-white/[0.08] text-[10px] text-[#60a5fa]/80 font-mono">
             <span>Outfit / Inter System</span>
             <span>Scalable SVGs</span>
           </div>
@@ -128,31 +130,31 @@ export default function Home() {
     },
     {
       num: '04',
-      title: 'Digital Products',
-      desc: 'Future-proof digital tools, dashboards, databases, and custom systems architected for real-world impact.',
-      tag: 'Custom Platforms',
+      title: 'Mobile App Development',
+      desc: 'We build modern, scalable mobile applications that deliver seamless experiences across iOS and Android.',
+      tag: 'iOS & Android',
       visual: (
-        <div className="w-full h-44 bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-lg p-3.5 relative overflow-hidden flex flex-col justify-between group-hover:border-champagne/60 transition-colors duration-500">
-          <div className="flex items-center justify-between border-b border-graphite/80 pb-2">
+        <div className="w-full h-44 bg-gradient-to-br from-[#111827] to-[#0a0f1a] border border-white/[0.08] rounded-lg p-3.5 relative overflow-hidden flex flex-col justify-between group-hover:border-[#3b82f6]/50 transition-colors duration-500">
+          <div className="flex items-center justify-between border-b border-white/[0.08] pb-2">
             <div className="flex items-center space-x-1.5">
-              <LayoutDashboard className="w-3.5 h-3.5 text-champagne" />
-              <span className="text-[10px] font-mono text-champagne/80 font-bold uppercase tracking-wider">System Dashboard</span>
+              <Smartphone className="w-3.5 h-3.5 text-[#3b82f6]" />
+              <span className="text-[10px] font-mono text-[#60a5fa] font-bold uppercase tracking-wider">Mobile App OS</span>
             </div>
-            <span className="text-[9px] text-emerald-400 font-mono flex items-center gap-1">● Live Sync</span>
+            <span className="text-[9px] text-emerald-400 font-mono flex items-center gap-1">● Cross-Platform</span>
           </div>
           <div className="grid grid-cols-2 gap-2 py-1">
-            <div className="bg-obsidian/70 p-2 rounded border border-graphite space-y-0.5">
-              <span className="text-[8px] text-ivory/40 block uppercase">Database Queries</span>
-              <span className="text-sm font-bold font-mono text-champagne">100%</span>
+            <div className="bg-[#0a0f1a]/90 p-2 rounded border border-white/[0.06] space-y-0.5">
+              <span className="text-[8px] text-[#64748b] block uppercase">Platform Target</span>
+              <span className="text-sm font-bold font-mono text-[#3b82f6]">iOS &amp; Android</span>
             </div>
-            <div className="bg-obsidian/70 p-2 rounded border border-graphite space-y-0.5">
-              <span className="text-[8px] text-ivory/40 block uppercase">Uptime Score</span>
-              <span className="text-sm font-bold font-mono text-champagne">99.98%</span>
+            <div className="bg-[#0a0f1a]/90 p-2 rounded border border-white/[0.06] space-y-0.5">
+              <span className="text-[8px] text-[#64748b] block uppercase">Performance</span>
+              <span className="text-sm font-bold font-mono text-[#3b82f6]">60 FPS Fluid</span>
             </div>
           </div>
-          <div className="flex items-center justify-between pt-2 border-t border-graphite/60 text-[10px] text-ivory/60 font-mono">
-            <span>PostgreSQL / RLS</span>
-            <span className="text-champagne">Admin Portals</span>
+          <div className="flex items-center justify-between pt-2 border-t border-white/[0.08] text-[10px] text-[#94a3b8] font-mono">
+            <span>React Native / Flutter</span>
+            <span className="text-[#3b82f6]">App Store Ready</span>
           </div>
         </div>
       )
@@ -183,11 +185,13 @@ export default function Home() {
   ];
 
   return (
-    <div className="relative w-full overflow-hidden bg-obsidian text-ivory">
+    <div className="relative w-full overflow-hidden bg-[#0a0f1a] text-[#f1f5f9]">
       
       {/* Hero Section */}
-      <section className="relative min-h-[88vh] flex items-center justify-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 border-b border-slate-200">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,_rgba(0,229,255,0.06),_rgba(0,91,255,0.03),_transparent_80%)] pointer-events-none" />
+      <section className="relative min-h-[88vh] flex items-center justify-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 border-b border-white/[0.08] overflow-hidden">
+        {/* Neural Network Canvas Background */}
+        <InteractiveNeuralNetwork />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,_rgba(59,130,246,0.08),_rgba(37,99,235,0.04),_transparent_80%)] pointer-events-none z-[1]" />
         
         <motion.div
           className="max-w-5xl mx-auto text-center z-10 space-y-7"
@@ -195,28 +199,28 @@ export default function Home() {
           animate="visible"
           variants={containerVariants}
         >
-          <motion.div variants={itemVariants} className="inline-flex items-center space-x-2 px-3.5 py-1 bg-graphite/80 border border-champagne/30 text-champagne rounded-full text-xs font-semibold uppercase tracking-wider">
-            <span className="w-1.5 h-1.5 rounded-full bg-champagne animate-ping mr-1" />
+          <motion.div variants={itemVariants} className="inline-flex items-center space-x-2 px-3.5 py-1 bg-[#111827]/80 border border-[#3b82f6]/30 text-[#60a5fa] rounded-full text-xs font-semibold uppercase tracking-wider shadow-sm shadow-blue-500/10">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#3b82f6] animate-ping mr-1" />
             <span>Digital Solutions. Real Transformation.</span>
           </motion.div>
 
           <motion.h1 
             variants={itemVariants} 
-            className="text-4xl sm:text-6xl md:text-7xl font-bold font-display leading-[1.1] tracking-tight"
+            className="text-4xl sm:text-6xl md:text-7xl font-bold font-display leading-[1.1] tracking-tight text-[#f1f5f9]"
           >
             OSAAC
           </motion.h1>
 
           <motion.p 
             variants={itemVariants} 
-            className="text-lg sm:text-xl font-light text-champagne/90 tracking-wide max-w-3xl mx-auto"
+            className="text-lg sm:text-xl font-light text-[#60a5fa] tracking-wide max-w-3xl mx-auto"
           >
             Modern Websites. Intelligent Automation. Distinct Brand Identities.
           </motion.p>
 
           <motion.p 
             variants={itemVariants} 
-            className="text-sm sm:text-base text-ivory/60 max-w-2xl mx-auto leading-relaxed"
+            className="text-sm sm:text-base text-[#94a3b8] max-w-2xl mx-auto leading-relaxed"
           >
             We engineer high-performance web systems, custom automation workflows, and tailored digital solutions 
             built specifically around real business requirements.
@@ -226,16 +230,15 @@ export default function Home() {
             variants={itemVariants} 
             className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
           >
-            <Link
+            <StartProjectButton
               href="/start-project"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-950 bg-champagne border border-champagne rounded-sm transition-all duration-300 hover:bg-mutedgold hover:border-mutedgold shadow-md shadow-champagne/20 hover:-translate-y-0.5"
+              className="w-full sm:w-auto px-8 py-3.5 text-xs"
             >
-              START YOUR PROJECT
-              <ArrowUpRight className="ml-2 h-4 w-4" />
-            </Link>
+              Start Project
+            </StartProjectButton>
             <Link
               href="/portfolio"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-800 bg-slate-100 border border-slate-300 rounded-sm transition-all duration-300 hover:bg-slate-200 hover:border-slate-400"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-[#f1f5f9] bg-[#111827] border border-white/10 rounded-sm transition-all duration-300 hover:bg-slate-800 hover:border-white/20"
             >
               View Our Work
             </Link>
@@ -244,15 +247,15 @@ export default function Home() {
       </section>
 
       {/* Services Section — Visual-First Editorial Cards */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-graphite/80">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-white/[0.08]">
         <div className="text-center max-w-2xl mx-auto space-y-3 mb-16">
-          <span className="inline-block text-xs font-bold uppercase tracking-widest text-champagne/80">
+          <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#3b82f6]">
             What We Do
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display tracking-tight text-[#f1f5f9]">
             Our Services
           </h2>
-          <p className="text-sm text-ivory/60 leading-relaxed">
+          <p className="text-sm text-[#94a3b8] leading-relaxed">
             From custom web systems to intelligent process automation — engineered for impact.
           </p>
         </div>
@@ -262,7 +265,7 @@ export default function Home() {
             <Link
               key={service.num}
               href="/services"
-              className="group relative overflow-hidden p-6 sm:p-8 bg-[#F1F5F9] border border-slate-200 shadow-[0_4px_20px_rgba(15,23,42,0.04)] rounded-xl transition-all duration-300 hover:border-slate-300 hover:shadow-md hover:-translate-y-1 flex flex-col justify-between space-y-6"
+              className="group relative overflow-hidden p-6 sm:p-8 bg-[#111827] border border-white/[0.08] shadow-[0_4px_20px_rgba(0,0,0,0.3)] rounded-xl transition-all duration-300 hover:border-white/20 hover:shadow-lg hover:-translate-y-1 flex flex-col justify-between space-y-6"
             >
               {/* Visual Presentation Element */}
               <div className="w-full">
@@ -272,29 +275,29 @@ export default function Home() {
               {/* Text & Content Block */}
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#005BFF] bg-white px-2.5 py-1 rounded border border-slate-200">
+                  <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#3b82f6] bg-[#0a0f1a] px-2.5 py-1 rounded border border-white/[0.08]">
                     {service.tag}
                   </span>
-                  <span className="text-2xl font-bold font-display text-slate-400 group-hover:text-[#005BFF] transition-colors duration-300">
+                  <span className="text-2xl font-bold font-display text-[#64748b] group-hover:text-[#3b82f6] transition-colors duration-300">
                     {service.num}
                   </span>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-bold font-display text-[#0B0F19] group-hover:text-[#005BFF] transition-colors duration-300">
+                <h3 className="text-xl sm:text-2xl font-bold font-display text-[#f1f5f9] group-hover:text-[#60a5fa] transition-colors duration-300">
                   {service.title}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#94a3b8] leading-relaxed">
                   {service.desc}
                 </p>
               </div>
 
               {/* Action Link */}
-              <div className="pt-2 border-t border-slate-200 flex items-center justify-between">
-                <span className="text-xs font-bold uppercase tracking-widest text-[#005BFF] group-hover:text-[#00E5FF] transition-colors duration-300">
+              <div className="pt-2 border-t border-white/[0.08] flex items-center justify-between">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#3b82f6] group-hover:text-[#60a5fa] transition-colors duration-300">
                   Explore Service
                 </span>
-                <ArrowRight className="h-4 w-4 text-[#005BFF] transition-transform group-hover:translate-x-1.5" />
+                <ArrowRight className="h-4 w-4 text-[#3b82f6] transition-transform group-hover:translate-x-1.5" />
               </div>
             </Link>
           ))}
@@ -302,9 +305,9 @@ export default function Home() {
       </section>
 
       {/* Company Stats / Trust Metrics Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-slate-200" aria-label="Company Trust Metrics">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-white/[0.08]" aria-label="Company Trust Metrics">
         <motion.div 
-          className="bg-[#F1F5F9] border border-slate-200 rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(15,23,42,0.04)]"
+          className="bg-[#111827] border border-white/[0.08] rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
@@ -319,7 +322,7 @@ export default function Home() {
             ].map((stat, idx) => (
               <div
                 key={idx}
-                className={`p-6 sm:p-8 md:p-10 text-center flex flex-col justify-center items-center border-slate-200 ${
+                className={`p-6 sm:p-8 md:p-10 text-center flex flex-col justify-center items-center border-white/[0.08] ${
                   idx % 2 === 0 ? 'border-r lg:border-r-0' : ''
                 } ${idx < 2 ? 'border-b lg:border-b-0' : ''} ${
                   idx > 0 ? 'lg:border-l' : ''
@@ -329,9 +332,9 @@ export default function Home() {
                   numericValue={stat.numericValue}
                   suffix={stat.suffix}
                   duration={1800}
-                  className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-[#0B0F19] tracking-tight"
+                  className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-[#f1f5f9] tracking-tight"
                 />
-                <span className="text-xs sm:text-sm font-mono font-medium text-slate-600 uppercase tracking-wider mt-2.5">
+                <span className="text-xs sm:text-sm font-mono font-medium text-[#94a3b8] uppercase tracking-wider mt-2.5">
                   {stat.label}
                 </span>
               </div>
@@ -343,13 +346,13 @@ export default function Home() {
       {/* Our Process Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-2xl mx-auto space-y-3 mb-16">
-          <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#005BFF]">
+          <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#3b82f6]">
             How We Work
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display tracking-tight text-[#0B0F19]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display tracking-tight text-[#f1f5f9]">
             Our Process
           </h2>
-          <p className="text-sm text-slate-600 leading-relaxed">
+          <p className="text-sm text-[#94a3b8] leading-relaxed">
             A continuous, transparent progression from concept discovery to live deployment.
           </p>
         </div>
@@ -364,9 +367,9 @@ export default function Home() {
           >
             <path
               d="M 150 60 C 275 60, 325 15, 450 15 C 575 15, 625 105, 750 105 C 875 105, 925 60, 1050 60"
-              stroke="#00E5FF"
+              stroke="#3b82f6"
               strokeWidth="3"
-              strokeOpacity="0.2"
+              strokeOpacity="0.25"
               strokeLinecap="round"
               fill="none"
             />
@@ -381,10 +384,10 @@ export default function Home() {
             />
             <defs>
               <linearGradient id="processGradientFlow" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#00E5FF" stopOpacity="0.4" />
-                <stop offset="33%" stopColor="#00E5FF" stopOpacity="0.8" />
-                <stop offset="66%" stopColor="#00E5FF" stopOpacity="0.8" />
-                <stop offset="100%" stopColor="#00E5FF" stopOpacity="0.4" />
+                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.3" />
+                <stop offset="33%" stopColor="#60a5fa" stopOpacity="0.8" />
+                <stop offset="66%" stopColor="#3b82f6" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.3" />
               </linearGradient>
             </defs>
           </svg>
@@ -394,31 +397,31 @@ export default function Home() {
             {steps.map((step, idx) => (
               <div
                 key={step.num}
-                className="relative p-6 sm:p-7 bg-[#F1F5F9] border border-slate-200 shadow-[0_4px_20px_rgba(15,23,42,0.04)] rounded-xl space-y-4 hover:border-slate-300 transition-all duration-300 flex flex-col justify-between"
+                className="relative p-6 sm:p-7 bg-[#111827] border border-white/[0.08] shadow-[0_4px_20px_rgba(0,0,0,0.3)] rounded-xl space-y-4 hover:border-white/20 transition-all duration-300 flex flex-col justify-between"
               >
                 {/* Node Top Indicator */}
-                <div className="flex items-center justify-between pb-2 border-b border-slate-200">
+                <div className="flex items-center justify-between pb-2 border-b border-white/[0.08]">
                   <div className="flex items-center space-x-2">
-                    <span className="w-3 h-3 rounded-full bg-[#00E5FF] ring-4 ring-[#00E5FF]/20 flex items-center justify-center text-[8px] font-bold text-slate-950" />
-                    <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#005BFF]">
+                    <span className="w-3 h-3 rounded-full bg-[#3b82f6] ring-4 ring-blue-500/20 flex items-center justify-center text-[8px] font-bold text-white" />
+                    <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#3b82f6]">
                       Stage {step.num}
                     </span>
                   </div>
-                  <span className="text-2xl font-bold font-display text-slate-300">
+                  <span className="text-2xl font-bold font-display text-[#64748b]">
                     {step.num}
                   </span>
                 </div>
 
                 <div className="space-y-2">
-                  <h3 className="text-lg font-bold font-display text-[#0B0F19]">
+                  <h3 className="text-lg font-bold font-display text-[#f1f5f9]">
                     {step.title}
                   </h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-xs text-[#94a3b8] leading-relaxed">
                     {step.desc}
                   </p>
                 </div>
 
-                <div className="pt-2 text-[10px] font-mono text-[#005BFF] uppercase">
+                <div className="pt-2 text-[10px] font-mono text-[#3b82f6] uppercase">
                   {idx < steps.length - 1 ? `Proceeds to 0${idx + 2} →` : 'Production Ready ✔'}
                 </div>
               </div>
@@ -429,24 +432,24 @@ export default function Home() {
         {/* Mobile & Tablet Process — Continuous Vertical Flowing Path */}
         <div className="lg:hidden relative">
           {/* Vertical Flowing Track */}
-          <div className="absolute left-6 top-8 bottom-8 w-[2px] bg-gradient-to-b from-champagne/60 via-champagne/30 to-champagne/60 z-0" />
+          <div className="absolute left-6 top-8 bottom-8 w-[2px] bg-gradient-to-b from-blue-500/60 via-blue-500/30 to-blue-500/60 z-0" />
           
           <div className="space-y-6 relative z-10">
             {steps.map((step, idx) => (
               <div key={step.num} className="flex gap-5">
                 {/* Step Connector Node */}
                 <div className="flex flex-col items-center shrink-0 pt-5">
-                  <div className="w-4 h-4 rounded-full bg-champagne border-2 border-obsidian ring-4 ring-champagne/20 shadow-md shadow-champagne/30 flex items-center justify-center text-[7px] font-bold text-obsidian">
+                  <div className="w-4 h-4 rounded-full bg-[#3b82f6] border-2 border-[#0a0f1a] ring-4 ring-blue-500/20 shadow-md shadow-blue-500/30 flex items-center justify-center text-[7px] font-bold text-white">
                     {idx + 1}
                   </div>
                 </div>
                 {/* Card */}
-                <div className="flex-1 p-5 bg-graphite/60 border border-graphite rounded-xl space-y-2">
-                  <span className="text-xs font-mono font-bold uppercase tracking-widest text-champagne/70 block">
+                <div className="flex-1 p-5 bg-[#111827] border border-white/[0.08] rounded-xl space-y-2">
+                  <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#60a5fa] block">
                     Stage {step.num}
                   </span>
-                  <h3 className="text-lg font-bold font-display text-champagne">{step.title}</h3>
-                  <p className="text-xs text-ivory/60 leading-relaxed">{step.desc}</p>
+                  <h3 className="text-lg font-bold font-display text-[#f1f5f9]">{step.title}</h3>
+                  <p className="text-xs text-[#94a3b8] leading-relaxed">{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -455,23 +458,22 @@ export default function Home() {
       </section>
 
       {/* CTA Footer Banner */}
-      <section className="py-20 bg-slate-50 border-t border-slate-200 text-center px-4">
+      <section className="py-20 bg-[#111827] border-t border-white/[0.08] text-center px-4">
         <div className="max-w-3xl mx-auto space-y-6">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-slate-900">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display text-[#f1f5f9]">
             Ready to Build Your Project?
           </h2>
-          <p className="text-sm text-slate-600 max-w-xl mx-auto leading-relaxed">
+          <p className="text-sm text-[#94a3b8] max-w-xl mx-auto leading-relaxed">
             Partner with us to build elegant, high-performing websites and custom automation.
             Get a tailored quotation based on your specific requirements.
           </p>
           <div className="pt-4">
-            <Link
+            <StartProjectButton
               href="/start-project"
-              className="inline-flex items-center justify-center px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-slate-950 bg-champagne border border-champagne rounded-sm transition-all duration-300 hover:bg-mutedgold hover:border-mutedgold hover:-translate-y-0.5 shadow-md shadow-champagne/20"
+              className="px-8 py-3.5 text-xs"
             >
-              START YOUR PROJECT
-              <ArrowUpRight className="ml-2 h-4 w-4" />
-            </Link>
+              Start Project
+            </StartProjectButton>
           </div>
         </div>
       </section>
