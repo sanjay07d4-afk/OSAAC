@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface StartProjectButtonProps {
   href?: string;
@@ -29,35 +29,29 @@ export default function StartProjectButton({
   fullWidth = false,
   id,
 }: StartProjectButtonProps) {
-  const [isShining, setIsShining] = useState(false);
-
-  useEffect(() => {
-    // Initial entrance subtle shine adapted from reference script
-    const timerOn = setTimeout(() => {
-      setIsShining(true);
-    }, 600);
-
-    const timerOff = setTimeout(() => {
-      setIsShining(false);
-    }, 2800);
-
-    return () => {
-      clearTimeout(timerOn);
-      clearTimeout(timerOff);
-    };
-  }, []);
-
   const content = (
-    <>
-      <span className="relative z-10 flex items-center justify-center gap-1.5">
-        {children || 'Start Project'}
-        {showIcon && (icon || <ArrowUpRight className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />)}
+    <span className="relative z-10 flex items-center justify-center gap-2.5">
+      {/* Left Dot with Expanding Sky-Blue Origin */}
+      <span className="relative flex items-center justify-center shrink-0">
+        <span className="osaac-sky-dot-origin" aria-hidden="true" />
+        <span className="osaac-sky-dot-indicator" aria-hidden="true" />
       </span>
-      <span className="drop-shadow" aria-hidden="true" />
-    </>
+
+      {/* Button Label Text */}
+      <span className="osaac-sky-btn-text font-bold">
+        {children || 'Start Project'}
+      </span>
+
+      {/* Sliding Arrow revealed on hover */}
+      {showIcon && (
+        <span className="osaac-sky-btn-arrow inline-flex items-center shrink-0">
+          {icon || <ArrowRight className="h-3.5 w-3.5" />}
+        </span>
+      )}
+    </span>
   );
 
-  const baseClasses = `group osaac-start-project-btn ${isShining ? 'shine' : ''} ${
+  const baseClasses = `group osaac-sky-pill-btn ${
     fullWidth ? 'w-full' : ''
   } ${className}`;
 

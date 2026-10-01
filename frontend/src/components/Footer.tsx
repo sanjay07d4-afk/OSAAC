@@ -114,8 +114,8 @@ export default function Footer() {
                 <div className="p-1.5 bg-[#111827] rounded text-[#3b82f6] border border-white/[0.08] shrink-0">
                   <Mail className="h-4 w-4" />
                 </div>
-                <a href="mailto:OSAAC@gmail.com" className="text-[#f1f5f9] hover:text-[#3b82f6] font-medium transition-colors duration-200 break-all">
-                  OSAAC@gmail.com
+                <a href="mailto:osaactech@gmail.com" className="text-[#f1f5f9] hover:text-[#3b82f6] font-medium transition-colors duration-200 break-all">
+                  osaactech@gmail.com
                 </a>
               </li>
             </ul>

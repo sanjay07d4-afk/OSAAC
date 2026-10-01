@@ -1,13 +1,29 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { ArrowRight, ArrowUpRight, Code, Cpu, Palette, Smartphone, Terminal, CheckCircle2, Sparkles } from 'lucide-react';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import AnimatedCounter from '@/components/AnimatedCounter';
-import InteractiveNeuralNetwork from '@/components/InteractiveNeuralNetwork';
+import KineticGrid from '@/components/KineticGrid';
 import StartProjectButton from '@/components/StartProjectButton';
+import ViewOurWorkButton from '@/components/ViewOurWorkButton';
+import ServiceCarousel from '@/components/ServiceCarousel';
+
+const rotatingWords = [
+  'Modern Websites, Intelligent Automation, & Distinct Brand Identities.'
+];
 
 export default function Home() {
+  const [wordIndex, setWordIndex] = useState(0);
+  const shouldReduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWordIndex((prev) => (prev + 1) % rotatingWords.length);
+    }, 2600);
+    return () => clearInterval(interval);
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -24,142 +40,6 @@ export default function Home() {
       transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] }
     }
   };
-
-  const services = [
-    {
-      num: '01',
-      title: 'Web Development',
-      desc: 'Custom websites and digital platforms engineered for performance, security, responsiveness, and scalability.',
-      tag: 'Core Engineering',
-      visual: (
-        <div className="w-full h-44 bg-gradient-to-br from-[#111827] to-[#0a0f1a] border border-white/[0.08] rounded-lg p-3.5 relative overflow-hidden flex flex-col justify-between group-hover:border-[#3b82f6]/50 transition-colors duration-500">
-          <div className="flex items-center justify-between border-b border-white/[0.08] pb-2">
-            <div className="flex items-center space-x-1.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#3b82f6]/60" />
-              <span className="w-2.5 h-2.5 rounded-full bg-[#3b82f6]/30" />
-              <span className="w-2.5 h-2.5 rounded-full bg-[#3b82f6]/30" />
-            </div>
-            <span className="text-[10px] font-mono text-[#60a5fa]/70 tracking-wider">osaac.tech/app.tsx</span>
-          </div>
-          <div className="font-mono text-[11px] text-[#94a3b8] space-y-1 py-1">
-            <p className="text-[#60a5fa]"><span className="text-[#64748b]">const</span> system = <span className="text-[#3b82f6]">createPlatform</span>({'{'}</p>
-            <p className="pl-3 text-[#94a3b8]">performance: <span className="text-[#60a5fa]">'100/100'</span>,</p>
-            <p className="pl-3 text-[#94a3b8]">responsive: <span className="text-[#60a5fa]">true</span></p>
-            <p className="text-[#60a5fa]">{'}'});</p>
-          </div>
-          <div className="flex items-center justify-between pt-2 border-t border-white/[0.08] text-[10px] text-[#60a5fa]/80 font-mono">
-            <span className="flex items-center gap-1"><Code className="w-3 h-3 text-[#3b82f6]" /> Next.js / TypeScript</span>
-            <span className="text-emerald-400 font-semibold flex items-center gap-1"><CheckCircle2 className="w-2.5 h-2.5" /> Production Ready</span>
-          </div>
-        </div>
-      )
-    },
-    {
-      num: '02',
-      title: 'AI Automation',
-      desc: 'Intelligent workflow automation, lead processing, and business system integrations tailored to your operations.',
-      tag: 'Workflow Intelligence',
-      visual: (
-        <div className="w-full h-44 bg-gradient-to-br from-[#111827] to-[#0a0f1a] border border-white/[0.08] rounded-lg p-3.5 relative overflow-hidden flex flex-col justify-between group-hover:border-[#3b82f6]/50 transition-colors duration-500">
-          <div className="flex items-center justify-between border-b border-white/[0.08] pb-2">
-            <div className="flex items-center space-x-1.5">
-              <Cpu className="w-3.5 h-3.5 text-[#3b82f6]" />
-              <span className="text-[10px] font-mono text-[#60a5fa] font-bold uppercase tracking-wider">AI Pipeline</span>
-            </div>
-            <span className="text-[9px] px-2 py-0.5 rounded-full bg-[#3b82f6]/10 text-[#60a5fa] border border-[#3b82f6]/20">Automated</span>
-          </div>
-          <div className="grid grid-cols-3 gap-2 py-2 text-center">
-            <div className="bg-[#0a0f1a]/90 p-2 rounded border border-white/[0.06] text-[10px]">
-              <span className="text-[#64748b] block text-[8px] uppercase">Input</span>
-              <span className="text-[#60a5fa] font-mono font-bold">New Lead</span>
-            </div>
-            <div className="bg-[#0a0f1a]/90 p-2 rounded border border-[#3b82f6]/30 text-[10px] relative">
-              <span className="text-[#3b82f6] block text-[8px] uppercase font-bold">Process</span>
-              <span className="text-[#f1f5f9] font-mono font-bold">AI Filter</span>
-              <span className="absolute -top-1 -right-1 w-2 h-2 bg-[#3b82f6] rounded-full animate-ping" />
-            </div>
-            <div className="bg-[#0a0f1a]/90 p-2 rounded border border-white/[0.06] text-[10px]">
-              <span className="text-[#64748b] block text-[8px] uppercase">Output</span>
-              <span className="text-[#60a5fa] font-mono font-bold">WhatsApp</span>
-            </div>
-          </div>
-          <div className="flex items-center justify-between pt-2 border-t border-white/[0.08] text-[10px] text-[#94a3b8] font-mono">
-            <span>Latency: &lt;150ms</span>
-            <span className="text-[#3b82f6] flex items-center gap-1"><Sparkles className="w-3 h-3 text-[#3b82f6]" /> 24/7 Active</span>
-          </div>
-        </div>
-      )
-    },
-    {
-      num: '03',
-      title: 'Logo & Brand Identity',
-      desc: 'Memorable brand visuals, logo systems, typography kits, and complete identity packages that set you apart.',
-      tag: 'Brand Architecture',
-      visual: (
-        <div className="w-full h-44 bg-gradient-to-br from-[#111827] to-[#0a0f1a] border border-white/[0.08] rounded-lg p-3.5 relative overflow-hidden flex flex-col justify-between group-hover:border-[#3b82f6]/50 transition-colors duration-500">
-          <div className="flex items-center justify-between border-b border-white/[0.08] pb-2">
-            <div className="flex items-center space-x-1.5">
-              <Palette className="w-3.5 h-3.5 text-[#3b82f6]" />
-              <span className="text-[10px] font-mono text-[#60a5fa] font-bold uppercase tracking-wider">Identity Kit</span>
-            </div>
-            <span className="text-[9px] text-[#64748b] font-mono">Vector / Tokens</span>
-          </div>
-          <div className="flex items-center justify-around py-2">
-            <div className="space-y-1 text-center">
-              <div className="w-12 h-10 border border-[#3b82f6]/40 rounded flex items-center justify-center bg-[#0a0f1a] text-[#3b82f6] font-display font-bold text-lg">
-                O
-              </div>
-              <span className="text-[8px] text-[#94a3b8] font-mono uppercase">Monogram</span>
-            </div>
-            <div className="space-y-1.5">
-              <div className="flex items-center space-x-1.5">
-                <div className="w-4 h-4 rounded bg-[#0a0f1a] border border-white/10" title="OSAAC Base" />
-                <div className="w-4 h-4 rounded bg-[#3b82f6]" title="Primary Blue" />
-                <div className="w-4 h-4 rounded bg-[#60a5fa]" title="Light Blue" />
-                <div className="w-4 h-4 rounded bg-[#111827]" title="Secondary BG" />
-              </div>
-              <span className="text-[8px] text-[#94a3b8] font-mono block text-center">Color Palette</span>
-            </div>
-          </div>
-          <div className="flex items-center justify-between pt-2 border-t border-white/[0.08] text-[10px] text-[#60a5fa]/80 font-mono">
-            <span>Outfit / Inter System</span>
-            <span>Scalable SVGs</span>
-          </div>
-        </div>
-      )
-    },
-    {
-      num: '04',
-      title: 'Mobile App Development',
-      desc: 'We build modern, scalable mobile applications that deliver seamless experiences across iOS and Android.',
-      tag: 'iOS & Android',
-      visual: (
-        <div className="w-full h-44 bg-gradient-to-br from-[#111827] to-[#0a0f1a] border border-white/[0.08] rounded-lg p-3.5 relative overflow-hidden flex flex-col justify-between group-hover:border-[#3b82f6]/50 transition-colors duration-500">
-          <div className="flex items-center justify-between border-b border-white/[0.08] pb-2">
-            <div className="flex items-center space-x-1.5">
-              <Smartphone className="w-3.5 h-3.5 text-[#3b82f6]" />
-              <span className="text-[10px] font-mono text-[#60a5fa] font-bold uppercase tracking-wider">Mobile App OS</span>
-            </div>
-            <span className="text-[9px] text-emerald-400 font-mono flex items-center gap-1">● Cross-Platform</span>
-          </div>
-          <div className="grid grid-cols-2 gap-2 py-1">
-            <div className="bg-[#0a0f1a]/90 p-2 rounded border border-white/[0.06] space-y-0.5">
-              <span className="text-[8px] text-[#64748b] block uppercase">Platform Target</span>
-              <span className="text-sm font-bold font-mono text-[#3b82f6]">iOS &amp; Android</span>
-            </div>
-            <div className="bg-[#0a0f1a]/90 p-2 rounded border border-white/[0.06] space-y-0.5">
-              <span className="text-[8px] text-[#64748b] block uppercase">Performance</span>
-              <span className="text-sm font-bold font-mono text-[#3b82f6]">60 FPS Fluid</span>
-            </div>
-          </div>
-          <div className="flex items-center justify-between pt-2 border-t border-white/[0.08] text-[10px] text-[#94a3b8] font-mono">
-            <span>React Native / Flutter</span>
-            <span className="text-[#3b82f6]">App Store Ready</span>
-          </div>
-        </div>
-      )
-    }
-  ];
 
   const steps = [
     {
@@ -190,7 +70,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-[88vh] flex items-center justify-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 border-b border-white/[0.08] overflow-hidden">
         {/* Neural Network Canvas Background */}
-        <InteractiveNeuralNetwork />
+        <KineticGrid />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,_rgba(59,130,246,0.08),_rgba(37,99,235,0.04),_transparent_80%)] pointer-events-none z-[1]" />
         
         <motion.div
@@ -206,17 +86,30 @@ export default function Home() {
 
           <motion.h1 
             variants={itemVariants} 
-            className="text-4xl sm:text-6xl md:text-7xl font-bold font-display leading-[1.1] tracking-tight text-[#f1f5f9]"
+            className="text-5xl sm:text-7xl md:text-8xl lg:text-[6.5rem] font-bold tracking-tight sm:tracking-[-0.03em] leading-[1.05] text-[#f1f5f9]"
           >
             OSAAC
           </motion.h1>
 
-          <motion.p 
+          <motion.div 
             variants={itemVariants} 
-            className="text-lg sm:text-xl font-light text-[#60a5fa] tracking-wide max-w-3xl mx-auto"
+            className="min-h-[2.5rem] sm:min-h-[3rem] flex items-center justify-center overflow-hidden"
+            aria-live="polite"
+            aria-atomic="true"
           >
-            Modern Websites. Intelligent Automation. Distinct Brand Identities.
-          </motion.p>
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={rotatingWords[wordIndex]}
+                initial={shouldReduceMotion ? { opacity: 0 } : { y: 16, opacity: 0, filter: 'blur(4px)' }}
+                animate={shouldReduceMotion ? { opacity: 1 } : { y: 0, opacity: 1, filter: 'blur(0px)' }}
+                exit={shouldReduceMotion ? { opacity: 0 } : { y: -16, opacity: 0, filter: 'blur(4px)' }}
+                transition={{ duration: shouldReduceMotion ? 0.2 : 0.45, ease: [0.16, 1, 0.3, 1] }}
+                className="text-base sm:text-xl md:text-2xl font-light font-[300] text-[#60a5fa] tracking-wide inline-block text-center leading-relaxed"
+              >
+                {rotatingWords[wordIndex]}
+              </motion.span>
+            </AnimatePresence>
+          </motion.div>
 
           <motion.p 
             variants={itemVariants} 
@@ -236,19 +129,19 @@ export default function Home() {
             >
               Start Project
             </StartProjectButton>
-            <Link
+            <ViewOurWorkButton
               href="/portfolio"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-[#f1f5f9] bg-[#111827] border border-white/10 rounded-sm transition-all duration-300 hover:bg-slate-800 hover:border-white/20"
+              className="w-full sm:w-auto px-8 py-3.5 text-xs"
             >
               View Our Work
-            </Link>
+            </ViewOurWorkButton>
           </motion.div>
         </motion.div>
       </section>
 
-      {/* Services Section — Visual-First Editorial Cards */}
+      {/* Services Section — Interactive 3D Service Cards Carousel */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-white/[0.08]">
-        <div className="text-center max-w-2xl mx-auto space-y-3 mb-16">
+        <div className="text-center max-w-2xl mx-auto space-y-3 mb-12 sm:mb-16">
           <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#3b82f6]">
             What We Do
           </span>
@@ -260,48 +153,8 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {services.map((service) => (
-            <Link
-              key={service.num}
-              href="/services"
-              className="group relative overflow-hidden p-6 sm:p-8 bg-[#111827] border border-white/[0.08] shadow-[0_4px_20px_rgba(0,0,0,0.3)] rounded-xl transition-all duration-300 hover:border-white/20 hover:shadow-lg hover:-translate-y-1 flex flex-col justify-between space-y-6"
-            >
-              {/* Visual Presentation Element */}
-              <div className="w-full">
-                {service.visual}
-              </div>
-
-              {/* Text & Content Block */}
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#3b82f6] bg-[#0a0f1a] px-2.5 py-1 rounded border border-white/[0.08]">
-                    {service.tag}
-                  </span>
-                  <span className="text-2xl font-bold font-display text-[#64748b] group-hover:text-[#3b82f6] transition-colors duration-300">
-                    {service.num}
-                  </span>
-                </div>
-
-                <h3 className="text-xl sm:text-2xl font-bold font-display text-[#f1f5f9] group-hover:text-[#60a5fa] transition-colors duration-300">
-                  {service.title}
-                </h3>
-
-                <p className="text-xs sm:text-sm text-[#94a3b8] leading-relaxed">
-                  {service.desc}
-                </p>
-              </div>
-
-              {/* Action Link */}
-              <div className="pt-2 border-t border-white/[0.08] flex items-center justify-between">
-                <span className="text-xs font-bold uppercase tracking-widest text-[#3b82f6] group-hover:text-[#60a5fa] transition-colors duration-300">
-                  Explore Service
-                </span>
-                <ArrowRight className="h-4 w-4 text-[#3b82f6] transition-transform group-hover:translate-x-1.5" />
-              </div>
-            </Link>
-          ))}
-        </div>
+        {/* Carousel Component */}
+        <ServiceCarousel />
       </section>
 
       {/* Company Stats / Trust Metrics Section */}

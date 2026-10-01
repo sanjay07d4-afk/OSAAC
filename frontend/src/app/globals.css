@@ -20,19 +20,36 @@
   --osaac-glow-hover: rgba(59, 130, 246, 0.45);
 }
 
+/* ==========================================================================
+   Monic Font Family - Global @font-face Declaration
+   Loads /fonts/Monic.woff2 or /fonts/Monic.ttf when placed in public/fonts/
+   ========================================================================== */
+@font-face {
+  font-family: 'Monic';
+  src: url('/fonts/Monic.woff2') format('woff2'),
+       url('/fonts/Monic.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   body {
     background-color: #0a0f1a; /* OSAAC Dark Base */
     color: #f1f5f9; /* Primary Text */
-    font-family: 'Inter', sans-serif;
+    font-family: 'Monic', var(--font-inter), 'Inter', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Monic', var(--font-outfit), 'Outfit', 'Inter', sans-serif;
     color: #f1f5f9; /* Primary Heading Text */
     font-weight: 600;
+  }
+
+  button, input, textarea, select {
+    font-family: 'Monic', var(--font-inter), 'Inter', sans-serif;
   }
 
   /* Custom focus ring matching OSAAC brand blue */
@@ -40,6 +57,12 @@
     outline: 2px solid #3b82f6;
     outline-offset: 2px;
   }
+}
+
+/* Scoped Hero Math Italic typography */
+.font-math-italic {
+  font-family: 'Math Italic', 'Monic', var(--font-inter), 'Inter', sans-serif;
+  font-style: italic;
 }
 
 /* Custom transitions and scroll behavior */
@@ -103,9 +126,9 @@ html {
 }
 
 /* ==========================================================================
-   OSAAC 3D Iridescent Neumorphic Start Project Button
-   Adapted from reference implementation with deep navy-blue aesthetic
-   Scoped STRICTLY to .osaac-start-project-btn
+   OSAAC 3D Iridescent Neumorphic Button (View Our Work)
+   Preserving original Start Project deep navy-blue aesthetic & 3D sheen
+   Scoped to .osaac-work-btn and .osaac-start-project-btn
    ========================================================================== */
 
 :root {
@@ -114,6 +137,7 @@ html {
   --osaac-btn-cubic-out: cubic-bezier(0.33, 1, 0.68, 1);
 }
 
+.osaac-work-btn,
 .osaac-start-project-btn {
   --osaac-btn-navy: #0b1f3a;
   --osaac-btn-navy-dark: #071426;
@@ -126,7 +150,7 @@ html {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Outfit', 'Inter', sans-serif;
+  font-family: 'Monic', 'Outfit', 'Inter', sans-serif;
   font-weight: 700;
   font-size: 0.75rem;
   letter-spacing: 0.12em;
@@ -163,11 +187,17 @@ html {
   transition: all 0.35s var(--osaac-btn-cubic-out);
 }
 
+.osaac-work-btn:has(.drop-shadow),
 .osaac-start-project-btn:has(.drop-shadow) {
   box-shadow: var(--btn-inset-shadow);
 }
 
 /* Multi-layered 3D pseudo-elements */
+.osaac-work-btn::before,
+.osaac-work-btn::after,
+.osaac-work-btn .drop-shadow,
+.osaac-work-btn .drop-shadow::after,
+.osaac-work-btn .drop-shadow::before,
 .osaac-start-project-btn::before,
 .osaac-start-project-btn::after,
 .osaac-start-project-btn .drop-shadow,
@@ -182,6 +212,7 @@ html {
 }
 
 /* Layer: Top rim refraction */
+.osaac-work-btn::after,
 .osaac-start-project-btn::after {
   opacity: 0.35;
   background: transparent;
@@ -194,12 +225,14 @@ html {
 }
 
 /* Layer: Base outer shadow */
+.osaac-work-btn .drop-shadow,
 .osaac-start-project-btn .drop-shadow {
   box-shadow: var(--btn-outer-shadow);
   z-index: -2;
 }
 
 /* Layer: Refraction & iridescent sweep across navy surface */
+.osaac-work-btn::before,
 .osaac-start-project-btn::before {
   opacity: 0;
   translate: 1.2em 0em;
@@ -224,6 +257,7 @@ html {
 }
 
 /* Layer: Soft ambient underglow */
+.osaac-work-btn .drop-shadow::after,
 .osaac-start-project-btn .drop-shadow::after {
   opacity: 0;
   translate: -0.2em 0.5em;
@@ -240,6 +274,7 @@ html {
 }
 
 /* Layer: Ambient ground depth shadow */
+.osaac-work-btn .drop-shadow::before,
 .osaac-start-project-btn .drop-shadow::before {
   opacity: 0.75;
   translate: 0 3px;
@@ -250,6 +285,8 @@ html {
 }
 
 /* Hover & Shine States */
+.osaac-work-btn:hover,
+.osaac-work-btn.shine,
 .osaac-start-project-btn:hover,
 .osaac-start-project-btn.shine {
   color: #ffffff;
@@ -272,11 +309,23 @@ html {
   box-shadow: var(--btn-inset-shadow), var(--btn-outer-shadow);
 }
 
+.osaac-work-btn:hover:has(.drop-shadow),
+.osaac-work-btn.shine:has(.drop-shadow),
 .osaac-start-project-btn:hover:has(.drop-shadow),
 .osaac-start-project-btn.shine:has(.drop-shadow) {
   box-shadow: var(--btn-inset-shadow);
 }
 
+.osaac-work-btn:hover::before,
+.osaac-work-btn:hover::after,
+.osaac-work-btn:hover .drop-shadow,
+.osaac-work-btn:hover .drop-shadow::after,
+.osaac-work-btn:hover .drop-shadow::before,
+.osaac-work-btn.shine::before,
+.osaac-work-btn.shine::after,
+.osaac-work-btn.shine .drop-shadow,
+.osaac-work-btn.shine .drop-shadow::after,
+.osaac-work-btn.shine .drop-shadow::before,
 .osaac-start-project-btn:hover::before,
 .osaac-start-project-btn:hover::after,
 .osaac-start-project-btn:hover .drop-shadow,
@@ -291,11 +340,15 @@ html {
   transition-timing-function: var(--osaac-btn-cubic-out);
 }
 
+.osaac-work-btn:hover::after,
+.osaac-work-btn.shine::after,
 .osaac-start-project-btn:hover::after,
 .osaac-start-project-btn.shine::after {
   opacity: 0.7;
 }
 
+.osaac-work-btn:hover::before,
+.osaac-work-btn.shine::before,
 .osaac-start-project-btn:hover::before,
 .osaac-start-project-btn.shine::before {
   opacity: 0.85;
@@ -303,6 +356,8 @@ html {
   scale: 1;
 }
 
+.osaac-work-btn:hover .drop-shadow::after,
+.osaac-work-btn.shine .drop-shadow::after,
 .osaac-start-project-btn:hover .drop-shadow::after,
 .osaac-start-project-btn.shine .drop-shadow::after {
   opacity: 0.75;
@@ -311,12 +366,14 @@ html {
 }
 
 /* Keyboard focus */
+.osaac-work-btn:focus-visible,
 .osaac-start-project-btn:focus-visible {
   outline: 2px solid #60a5fa !important;
   outline-offset: 3px !important;
 }
 
 /* Active / Pressed physical click state */
+.osaac-work-btn:active,
 .osaac-start-project-btn:active {
   transform: translateY(1.5px) !important;
   transition: all 0.1s var(--osaac-btn-cubic-out);
@@ -333,12 +390,712 @@ html {
   box-shadow: var(--btn-inset-shadow), var(--btn-outer-shadow);
 }
 
+.osaac-work-btn:active:has(.drop-shadow),
 .osaac-start-project-btn:active:has(.drop-shadow) {
   box-shadow: var(--btn-inset-shadow);
 }
 
+.osaac-work-btn:active::after,
 .osaac-start-project-btn:active::after {
   opacity: 0.9;
   transition: all 0.1s var(--osaac-btn-cubic-out);
 }
+
+/* ==========================================================================
+   OSAAC Sky-Blue Expanding Dot Pill Button (New Start Project)
+   ========================================================================== */
+
+.osaac-sky-pill-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 9999px;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  background-color: #0b172a;
+  background-image: linear-gradient(180deg, #0b172a 0%, #07101e 100%);
+  font-family: 'Monic', 'Outfit', 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f8fafc;
+  padding: 0.85rem 1.75rem;
+  min-height: 44px;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  isolation: isolate;
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.45), inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
+  transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.15s ease;
+}
+
+/* Expanding Dot Origin (Expands to flood entire pill with sky blue) */
+.osaac-sky-pill-btn .osaac-sky-dot-origin {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  margin-left: -4px;
+  border-radius: 9999px;
+  background-color: #38bdf8;
+  transform: scale(0);
+  transform-origin: center center;
+  pointer-events: none;
+  z-index: 1;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Resting Left Indicator Dot */
+.osaac-sky-pill-btn .osaac-sky-dot-indicator {
+  position: relative;
+  z-index: 2;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: #38bdf8;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.85);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Button Label Text */
+.osaac-sky-pill-btn .osaac-sky-btn-text {
+  position: relative;
+  z-index: 2;
+  color: #f8fafc;
+  transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Sliding Right Arrow revealed on hover */
+.osaac-sky-pill-btn .osaac-sky-btn-arrow {
+  position: relative;
+  z-index: 2;
+  color: #071324;
+  max-width: 0;
+  opacity: 0;
+  transform: translateX(-8px);
+  overflow: hidden;
+  transition: max-width 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover & Focus State */
+.osaac-sky-pill-btn:hover,
+.osaac-sky-pill-btn:focus-visible {
+  border-color: #38bdf8;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.35), 0 4px 14px 0 rgba(0, 0, 0, 0.5);
+}
+
+.osaac-sky-pill-btn:hover .osaac-sky-dot-origin,
+.osaac-sky-pill-btn:focus-visible .osaac-sky-dot-origin {
+  transform: scale(75);
+}
+
+.osaac-sky-pill-btn:hover .osaac-sky-dot-indicator,
+.osaac-sky-pill-btn:focus-visible .osaac-sky-dot-indicator {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.osaac-sky-pill-btn:hover .osaac-sky-btn-text,
+.osaac-sky-pill-btn:focus-visible .osaac-sky-btn-text {
+  color: #071324 !important;
+}
+
+.osaac-sky-pill-btn:hover .osaac-sky-btn-arrow,
+.osaac-sky-pill-btn:focus-visible .osaac-sky-btn-arrow {
+  max-width: 24px;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Keyboard focus accessibility */
+.osaac-sky-pill-btn:focus-visible {
+  outline: 2px solid #38bdf8 !important;
+  outline-offset: 3px !important;
+}
+
+/* Active / Pressed state */
+.osaac-sky-pill-btn:active {
+  transform: scale(0.98);
+}
+
+/* ==========================================================================
+   OSAAC Start Project Page Specific CTA Button Animation
+   Minimalist white pill with right light-gray panel expanding to center arrow
+   Scoped STRICTLY to .osaac-start-project-page-btn
+   ========================================================================== */
+
+.osaac-start-project-page-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 9999px;
+  background-color: #f8f8f8;
+  border: 1.5px solid #e5e5e5;
+  color: #111111;
+  font-family: 'Monic', 'Outfit', 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.85rem 3.5rem 0.85rem 1.75rem;
+  min-height: 52px;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  isolation: isolate;
+  transition: border-color 0.35s ease,
+              background-color 0.35s ease,
+              transform 0.15s ease,
+              box-shadow 0.35s ease;
+}
+
+/* Light Gray Expanding Right Area */
+.osaac-start-project-page-btn .osaac-sp-gray-panel {
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  right: 5px;
+  width: 42px;
+  border-radius: 9999px;
+  background-color: #d6d6d6;
+  z-index: 1;
+  pointer-events: none;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.35s ease;
+}
+
+/* Text Content */
+.osaac-start-project-page-btn .osaac-sp-text {
+  position: relative;
+  z-index: 2;
+  color: #111111;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Right Arrow Icon Wrapper */
+.osaac-start-project-page-btn .osaac-sp-arrow-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 5px;
+  width: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  color: #111111;
+  pointer-events: none;
+  transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover & Focus-Visible States */
+.osaac-start-project-page-btn:hover:not(:disabled),
+.osaac-start-project-page-btn:focus-visible:not(:disabled) {
+  border-color: #d6d6d6;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.osaac-start-project-page-btn:hover:not(:disabled) .osaac-sp-gray-panel,
+.osaac-start-project-page-btn:focus-visible:not(:disabled) .osaac-sp-gray-panel {
+  width: calc(100% - 10px);
+}
+
+.osaac-start-project-page-btn:hover:not(:disabled) .osaac-sp-text,
+.osaac-start-project-page-btn:focus-visible:not(:disabled) .osaac-sp-text {
+  opacity: 0;
+  transform: translateX(-12px);
+}
+
+.osaac-start-project-page-btn:hover:not(:disabled) .osaac-sp-arrow-wrapper,
+.osaac-start-project-page-btn:focus-visible:not(:disabled) .osaac-sp-arrow-wrapper {
+  right: calc(50% - 21px);
+}
+
+/* Keyboard focus accessibility */
+.osaac-start-project-page-btn:focus-visible {
+  outline: 2px solid #111111 !important;
+  outline-offset: 3px !important;
+}
+
+/* Active / Clicked state */
+.osaac-start-project-page-btn:active:not(:disabled) {
+  transform: scale(0.985);
+}
+
+/* Disabled & Loading state */
+.osaac-start-project-page-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.osaac-start-project-page-btn.is-loading,
+.osaac-start-project-page-btn.is-success {
+  padding-right: 1.75rem;
+}
+
+.osaac-start-project-page-btn.is-loading .osaac-sp-gray-panel,
+.osaac-start-project-page-btn.is-success .osaac-sp-gray-panel,
+.osaac-start-project-page-btn.is-loading .osaac-sp-arrow-wrapper,
+.osaac-start-project-page-btn.is-success .osaac-sp-arrow-wrapper {
+  display: none;
+}
+
+/* Reduced Motion Handling */
+@media (prefers-reduced-motion: reduce) {
+  .osaac-sky-pill-btn,
+  .osaac-sky-pill-btn .osaac-sky-dot-origin,
+  .osaac-sky-pill-btn .osaac-sky-dot-indicator,
+  .osaac-sky-pill-btn .osaac-sky-btn-text,
+  .osaac-sky-pill-btn .osaac-sky-btn-arrow,
+  .osaac-work-btn,
+  .osaac-work-btn::before,
+  .osaac-work-btn::after,
+  .osaac-work-btn .drop-shadow,
+  .osaac-start-project-page-btn,
+  .osaac-start-project-page-btn .osaac-sp-gray-panel,
+  .osaac-start-project-page-btn .osaac-sp-text,
+  .osaac-start-project-page-btn .osaac-sp-arrow-wrapper,
+  .osaac-contact-box,
+  .osaac-contact-box__glow,
+  .osaac-contact-box__beam {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ==========================================================================
+   OSAAC Animated Contact Box Component
+   Scoped strictly under .osaac-contact-box
+   ========================================================================== */
+
+.osaac-contact-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.95) 0%, rgba(10, 15, 26, 0.98) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5), 0 0 25px -5px rgba(56, 189, 248, 0.12);
+  isolation: isolate;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.osaac-contact-box:hover {
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.6), 0 0 35px -5px rgba(56, 189, 248, 0.18);
+}
+
+/* Ambient Radial Glow */
+.osaac-contact-box__glow {
+  position: absolute;
+  top: -40%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(
+    circle at 30% 20%,
+    rgba(56, 189, 248, 0.12) 0%,
+    rgba(59, 130, 246, 0.06) 35%,
+    transparent 70%
+  );
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 1;
+  animation: osaacContactGlowPulse 8s ease-in-out infinite alternate;
+}
+
+/* Subtle Animated Border Beam */
+.osaac-contact-box__beam {
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(56, 189, 248, 0.4) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 1px;
+  pointer-events: none;
+  z-index: 2;
+  animation: osaacContactBeam 6s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes osaacContactGlowPulse {
+  0% {
+    transform: scale(0.95) translate(0%, 0%);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.05) translate(5%, 5%);
+    opacity: 1;
+  }
+}
+
+@keyframes osaacContactBeam {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Content Container */
+.osaac-contact-box__content {
+  position: relative;
+  z-index: 3;
+  padding: 1.75rem;
+}
+
+@media (min-width: 640px) {
+  .osaac-contact-box__content {
+    padding: 2.25rem;
+  }
+}
+
+/* Input Fields */
+.osaac-contact-box__input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: rgba(7, 14, 28, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.625rem;
+  font-size: 0.875rem;
+  color: #f1f5f9;
+  outline: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.osaac-contact-box__input::placeholder {
+  color: #64748b;
+}
+
+.osaac-contact-box__input:focus {
+  background-color: rgba(10, 20, 38, 0.95);
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.3), 0 0 16px rgba(56, 189, 248, 0.15);
+}
+
+.osaac-contact-box__textarea {
+  resize: vertical;
+  min-height: 95px;
+}
+
+/* Service Selection Pills */
+.osaac-contact-box__pill {
+  padding: 0.45rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background-color: rgba(7, 14, 28, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.osaac-contact-box__pill:hover:not(:disabled) {
+  background-color: rgba(14, 27, 50, 0.9);
+  border-color: rgba(56, 189, 248, 0.3);
+  color: #f1f5f9;
+}
+
+.osaac-contact-box__pill.is-selected {
+  background-color: rgba(56, 189, 248, 0.15);
+  border-color: #38bdf8;
+  color: #38bdf8;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+}
+
+/* Submit Button */
+.osaac-contact-box__submit {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.5rem;
+  border-radius: 0.625rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+  color: #071324;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 4px 14px rgba(56, 189, 248, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.osaac-contact-box__submit:hover:not(:disabled) {
+  transform: translateY(-1.5px);
+  background: linear-gradient(135deg, #7dd3fc 0%, #38bdf8 100%);
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
+}
+
+.osaac-contact-box__submit:active:not(:disabled) {
+  transform: translateY(0.5px);
+}
+
+.osaac-contact-box__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Success View */
+.osaac-contact-box__success {
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  border-radius: 0.875rem;
+  background: rgba(7, 14, 28, 0.8);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+/* ==========================================================================
+   OSAAC Start Project Contact Box Component
+   Scoped strictly under .osaac-start-project-contact-box
+   ========================================================================== */
+
+.osaac-start-project-contact-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.95) 0%, rgba(10, 15, 26, 0.98) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.6), 0 0 25px -5px rgba(56, 189, 248, 0.18);
+  isolation: isolate;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.osaac-start-project-contact-box:hover {
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.7), 0 0 35px -5px rgba(56, 189, 248, 0.28);
+}
+
+/* Sky Blue Ambient Radial Glow */
+.osaac-start-project-contact-box__glow {
+  position: absolute;
+  top: -30%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.18) 0%,
+    rgba(56, 189, 248, 0.08) 35%,
+    transparent 70%
+  );
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 1;
+  animation: osaacSpGlowPulse 10s ease-in-out infinite alternate;
+}
+
+/* Subtle Sky Blue Animated Border Beam */
+.osaac-start-project-contact-box__beam {
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(56, 189, 248, 0.40) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 1px;
+  pointer-events: none;
+  z-index: 2;
+  animation: osaacSpBeam 7s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes osaacSpGlowPulse {
+  0% {
+    transform: scale(0.96) translate(0%, 0%);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.04) translate(4%, 4%);
+    opacity: 1;
+  }
+}
+
+@keyframes osaacSpBeam {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Content Container */
+.osaac-start-project-contact-box__content {
+  position: relative;
+  z-index: 3;
+  padding: 1.75rem;
+}
+
+@media (min-width: 640px) {
+  .osaac-start-project-contact-box__content {
+    padding: 2.25rem;
+  }
+}
+
+/* Input Fields */
+.osaac-sp-cb-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: rgba(7, 13, 24, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.625rem;
+  font-size: 0.875rem;
+  color: #f1f5f9;
+  outline: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.osaac-sp-cb-input::placeholder {
+  color: #64748b;
+}
+
+.osaac-sp-cb-input:focus {
+  background-color: rgba(10, 20, 38, 0.95);
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.3), 0 0 15px rgba(56, 189, 248, 0.15);
+}
+
+.osaac-sp-cb-textarea {
+  resize: vertical;
+  min-height: 95px;
+}
+
+/* Service Selection Pills */
+.osaac-sp-cb-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background-color: rgba(7, 13, 24, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.osaac-sp-cb-pill:hover:not(:disabled) {
+  background-color: rgba(14, 27, 50, 0.9);
+  border-color: rgba(56, 189, 248, 0.35);
+  color: #f1f5f9;
+}
+
+.osaac-sp-cb-pill.is-selected {
+  background-color: rgba(56, 189, 248, 0.10);
+  border-color: rgba(56, 189, 248, 0.45);
+  color: #f1f5f9;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+}
+
+.osaac-sp-cb-pill__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: rgba(148, 163, 184, 0.4);
+  transition: all 0.2s ease;
+}
+
+.osaac-sp-cb-pill.is-selected .osaac-sp-cb-pill__dot {
+  background-color: #38bdf8;
+  box-shadow: 0 0 6px #38bdf8;
+}
+
+/* ==========================================================================
+   Start Project Contact Box Button - Scoped Sky-Blue Color Only
+   Leaves all animations, layout, easing, and other buttons untouched.
+   ========================================================================== */
+
+.osaac-start-project-contact-box .osaac-start-project-page-btn {
+  background-color: #38bdf8;
+  border-color: #38bdf8;
+  color: #0f172a;
+}
+
+.osaac-start-project-contact-box .osaac-start-project-page-btn .osaac-sp-gray-panel {
+  background-color: #0ea5e9;
+}
+
+.osaac-start-project-contact-box .osaac-start-project-page-btn .osaac-sp-text {
+  color: #0f172a;
+}
+
+.osaac-start-project-contact-box .osaac-start-project-page-btn .osaac-sp-arrow-wrapper {
+  color: #0f172a;
+}
+
+.osaac-start-project-contact-box .osaac-start-project-page-btn .osaac-sp-arrow-wrapper svg,
+.osaac-start-project-contact-box .osaac-start-project-page-btn .osaac-sp-text svg {
+  color: #0f172a;
+}
+
+.osaac-start-project-contact-box .osaac-start-project-page-btn:hover:not(:disabled),
+.osaac-start-project-contact-box .osaac-start-project-page-btn:focus-visible:not(:disabled) {
+  border-color: #0ea5e9;
+}
+
+.osaac-start-project-contact-box .osaac-start-project-page-btn:hover:not(:disabled) .osaac-sp-gray-panel,
+.osaac-start-project-contact-box .osaac-start-project-page-btn:focus-visible:not(:disabled) .osaac-sp-gray-panel {
+  background-color: #0ea5e9;
+}
+
+.osaac-start-project-contact-box .osaac-start-project-page-btn:focus-visible {
+  outline-color: #38bdf8 !important;
+}
+
+.osaac-start-project-contact-box .osaac-start-project-page-btn.is-success {
+  background-color: #34d399;
+  border-color: #10b981;
+  color: #064e3b;
+}
+
+.osaac-start-project-contact-box .osaac-start-project-page-btn.is-success .osaac-sp-text,
+.osaac-start-project-contact-box .osaac-start-project-page-btn.is-success .osaac-sp-text svg {
+  color: #064e3b;
+}
+
+
+
 

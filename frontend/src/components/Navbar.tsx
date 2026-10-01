@@ -30,17 +30,17 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-[#0a0f1a]/85 backdrop-blur-md border-b border-white/[0.08] shadow-sm transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-[72px] sm:h-[76px]">
-          {/* Official OSAAC Logo — Constrained Container & Proportions */}
+        <div className="flex items-center justify-between h-[76px] sm:h-[80px]">
+          {/* Official OSAAC Logo — Prominent & Balanced Proportions */}
           <div className="flex items-center shrink-0">
-            <Link href="/" className="flex items-center group py-2">
+            <Link href="/" className="flex items-center group py-1.5">
               <Image
                 src="/logo.png"
                 alt="OSAAC"
-                width={170}
-                height={52}
+                width={190}
+                height={60}
                 priority
-                className="h-[38px] sm:h-[46px] md:h-[50px] w-auto max-h-[52px] object-contain transition-opacity duration-300 group-hover:opacity-90"
+                className="h-[44px] sm:h-[52px] md:h-[56px] w-auto max-h-[60px] object-contain transition-opacity duration-300 group-hover:opacity-90"
               />
             </Link>
           </div>

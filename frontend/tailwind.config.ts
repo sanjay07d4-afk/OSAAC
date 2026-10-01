@@ -29,8 +29,10 @@ const config: Config = {
         ivory: '#f1f5f9',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['Outfit', 'sans-serif'],
+        sans: ['Monic', 'var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['Monic', 'var(--font-outfit)', 'Outfit', 'Inter', 'sans-serif'],
+        monic: ['Monic', 'var(--font-inter)', 'Inter', 'sans-serif'],
+        'math-italic': ['Math Italic', 'Monic', 'var(--font-inter)', 'Inter', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out forwards',

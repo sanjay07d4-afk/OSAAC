@@ -55,7 +55,7 @@ export default function PrivacyPolicy() {
             If you have questions regarding this privacy summary, please reach out to us at:
           </p>
           <p className="text-[#3b82f6] font-mono font-semibold pt-1">
-            OSAAC@gmail.com
+            osaactech@gmail.com
           </p>
         </section>
       </div>
