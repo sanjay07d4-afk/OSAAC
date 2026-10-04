@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Mail, Phone, MessageSquare } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
+import { WhatsAppIcon } from '@/components/WhatsAppButton';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -103,10 +104,10 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center space-x-3">
-                <div className="p-1.5 bg-[#111827] rounded text-[#3b82f6] border border-white/[0.08] shrink-0">
-                  <MessageSquare className="h-4 w-4" />
+                <div className="p-1.5 bg-[#111827] rounded text-[#25D366] border border-white/[0.08] shrink-0">
+                  <WhatsAppIcon className="h-4 w-4" />
                 </div>
-                <a href="https://wa.me/917603881020" target="_blank" rel="noopener noreferrer" className="text-[#f1f5f9] hover:text-[#3b82f6] font-medium transition-colors duration-200">
+                <a href="https://wa.me/917603881020?text=Hi%20OSAAC%2C%20I%20would%20like%20to%20discuss%20a%20project%20with%20your%20team." target="_blank" rel="noopener noreferrer" className="text-[#f1f5f9] hover:text-[#25D366] font-medium transition-colors duration-200">
                   WhatsApp
                 </a>
               </li>

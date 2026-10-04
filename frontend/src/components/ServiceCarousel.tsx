@@ -2,6 +2,7 @@
 
 import React, { useState, useCallback } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { 
   ChevronLeft, 
@@ -10,9 +11,7 @@ import {
   Code, 
   Cpu, 
   Palette, 
-  Smartphone, 
-  CheckCircle2, 
-  Sparkles 
+  Smartphone 
 } from 'lucide-react';
 
 interface ServiceItem {
@@ -36,25 +35,14 @@ const services: ServiceItem[] = [
     href: '/services',
     icon: <Code className="w-4 h-4 text-[#3b82f6]" />,
     visual: (
-      <div className="w-full h-36 sm:h-40 bg-gradient-to-br from-[#111827] to-[#0a0f1a] border border-white/[0.08] rounded-lg p-3 relative overflow-hidden flex flex-col justify-between">
-        <div className="flex items-center justify-between border-b border-white/[0.08] pb-1.5">
-          <div className="flex items-center space-x-1.5">
-            <span className="w-2 h-2 rounded-full bg-[#3b82f6]/70" />
-            <span className="w-2 h-2 rounded-full bg-[#3b82f6]/30" />
-            <span className="w-2 h-2 rounded-full bg-[#3b82f6]/30" />
-          </div>
-          <span className="text-[9px] sm:text-[10px] font-mono text-[#60a5fa]/70 tracking-wider">osaac.tech/app.tsx</span>
-        </div>
-        <div className="font-mono text-[10px] sm:text-[11px] text-[#94a3b8] space-y-0.5 py-1">
-          <p className="text-[#60a5fa]"><span className="text-[#64748b]">const</span> platform = <span className="text-[#3b82f6]">createSystem</span>({'{'}</p>
-          <p className="pl-3 text-[#94a3b8]">performance: <span className="text-[#60a5fa]">'100/100'</span>,</p>
-          <p className="pl-3 text-[#94a3b8]">responsive: <span className="text-[#60a5fa]">true</span></p>
-          <p className="text-[#60a5fa]">{'}'});</p>
-        </div>
-        <div className="flex items-center justify-between pt-1.5 border-t border-white/[0.08] text-[9px] sm:text-[10px] text-[#60a5fa]/80 font-mono">
-          <span className="flex items-center gap-1"><Code className="w-3 h-3 text-[#3b82f6]" /> Next.js / TypeScript</span>
-          <span className="text-emerald-400 font-semibold flex items-center gap-1"><CheckCircle2 className="w-2.5 h-2.5" /> Production Ready</span>
-        </div>
+      <div className="w-full h-36 sm:h-40 relative overflow-hidden rounded-lg border border-white/[0.08]">
+        <Image
+          src="/images/services/web-development.jpg"
+          alt="Web Development — modern website interfaces and code engineering"
+          fill
+          className="object-cover"
+          sizes="(max-width: 640px) 88vw, 440px"
+        />
       </div>
     )
   },
@@ -67,33 +55,14 @@ const services: ServiceItem[] = [
     href: '/services',
     icon: <Cpu className="w-4 h-4 text-[#3b82f6]" />,
     visual: (
-      <div className="w-full h-36 sm:h-40 bg-gradient-to-br from-[#111827] to-[#0a0f1a] border border-white/[0.08] rounded-lg p-3 relative overflow-hidden flex flex-col justify-between">
-        <div className="flex items-center justify-between border-b border-white/[0.08] pb-1.5">
-          <div className="flex items-center space-x-1.5">
-            <Cpu className="w-3.5 h-3.5 text-[#3b82f6]" />
-            <span className="text-[9px] sm:text-[10px] font-mono text-[#60a5fa] font-bold uppercase tracking-wider">AI Pipeline</span>
-          </div>
-          <span className="text-[8px] sm:text-[9px] px-1.5 py-0.5 rounded-full bg-[#3b82f6]/10 text-[#60a5fa] border border-[#3b82f6]/20">Automated</span>
-        </div>
-        <div className="grid grid-cols-3 gap-1.5 py-1 text-center">
-          <div className="bg-[#0a0f1a]/90 p-1.5 rounded border border-white/[0.06] text-[9px]">
-            <span className="text-[#64748b] block text-[7px] uppercase">Input</span>
-            <span className="text-[#60a5fa] font-mono font-bold">New Lead</span>
-          </div>
-          <div className="bg-[#0a0f1a]/90 p-1.5 rounded border border-[#3b82f6]/30 text-[9px] relative">
-            <span className="text-[#3b82f6] block text-[7px] uppercase font-bold">Process</span>
-            <span className="text-[#f1f5f9] font-mono font-bold">AI Filter</span>
-            <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-[#3b82f6] rounded-full animate-ping" />
-          </div>
-          <div className="bg-[#0a0f1a]/90 p-1.5 rounded border border-white/[0.06] text-[9px]">
-            <span className="text-[#64748b] block text-[7px] uppercase">Output</span>
-            <span className="text-[#60a5fa] font-mono font-bold">WhatsApp</span>
-          </div>
-        </div>
-        <div className="flex items-center justify-between pt-1.5 border-t border-white/[0.08] text-[9px] sm:text-[10px] text-[#94a3b8] font-mono">
-          <span>Latency: &lt;150ms</span>
-          <span className="text-[#3b82f6] flex items-center gap-1"><Sparkles className="w-2.5 h-2.5 text-[#3b82f6]" /> 24/7 Active</span>
-        </div>
+      <div className="w-full h-36 sm:h-40 relative overflow-hidden rounded-lg border border-white/[0.08]">
+        <Image
+          src="/images/services/ai-automation.jpg"
+          alt="AI Automation — intelligent workflows and connected systems"
+          fill
+          className="object-cover"
+          sizes="(max-width: 640px) 88vw, 440px"
+        />
       </div>
     )
   },
@@ -106,35 +75,14 @@ const services: ServiceItem[] = [
     href: '/services',
     icon: <Palette className="w-4 h-4 text-[#3b82f6]" />,
     visual: (
-      <div className="w-full h-36 sm:h-40 bg-gradient-to-br from-[#111827] to-[#0a0f1a] border border-white/[0.08] rounded-lg p-3 relative overflow-hidden flex flex-col justify-between">
-        <div className="flex items-center justify-between border-b border-white/[0.08] pb-1.5">
-          <div className="flex items-center space-x-1.5">
-            <Palette className="w-3.5 h-3.5 text-[#3b82f6]" />
-            <span className="text-[9px] sm:text-[10px] font-mono text-[#60a5fa] font-bold uppercase tracking-wider">Identity Kit</span>
-          </div>
-          <span className="text-[8px] sm:text-[9px] text-[#64748b] font-mono">Vector / Tokens</span>
-        </div>
-        <div className="flex items-center justify-around py-1">
-          <div className="space-y-0.5 text-center">
-            <div className="w-10 h-8 border border-[#3b82f6]/40 rounded flex items-center justify-center bg-[#0a0f1a] text-[#3b82f6] font-display font-bold text-base">
-              O
-            </div>
-            <span className="text-[7px] text-[#94a3b8] font-mono uppercase">Monogram</span>
-          </div>
-          <div className="space-y-1">
-            <div className="flex items-center space-x-1">
-              <div className="w-3.5 h-3.5 rounded bg-[#0a0f1a] border border-white/10" title="OSAAC Base" />
-              <div className="w-3.5 h-3.5 rounded bg-[#3b82f6]" title="Primary Blue" />
-              <div className="w-3.5 h-3.5 rounded bg-[#60a5fa]" title="Light Blue" />
-              <div className="w-3.5 h-3.5 rounded bg-[#111827]" title="Secondary BG" />
-            </div>
-            <span className="text-[7px] text-[#94a3b8] font-mono block text-center">Color Palette</span>
-          </div>
-        </div>
-        <div className="flex items-center justify-between pt-1.5 border-t border-white/[0.08] text-[9px] sm:text-[10px] text-[#60a5fa]/80 font-mono">
-          <span>Outfit / Inter System</span>
-          <span>Scalable SVGs</span>
-        </div>
+      <div className="w-full h-36 sm:h-40 relative overflow-hidden rounded-lg border border-white/[0.08]">
+        <Image
+          src="/images/services/brand-identity.jpg"
+          alt="Logo & Brand Identity — visual identity and creative design"
+          fill
+          className="object-cover"
+          sizes="(max-width: 640px) 88vw, 440px"
+        />
       </div>
     )
   },
@@ -147,28 +95,14 @@ const services: ServiceItem[] = [
     href: '/services',
     icon: <Smartphone className="w-4 h-4 text-[#3b82f6]" />,
     visual: (
-      <div className="w-full h-36 sm:h-40 bg-gradient-to-br from-[#111827] to-[#0a0f1a] border border-white/[0.08] rounded-lg p-3 relative overflow-hidden flex flex-col justify-between">
-        <div className="flex items-center justify-between border-b border-white/[0.08] pb-1.5">
-          <div className="flex items-center space-x-1.5">
-            <Smartphone className="w-3.5 h-3.5 text-[#3b82f6]" />
-            <span className="text-[9px] sm:text-[10px] font-mono text-[#60a5fa] font-bold uppercase tracking-wider">Mobile App OS</span>
-          </div>
-          <span className="text-[8px] sm:text-[9px] text-emerald-400 font-mono flex items-center gap-1">● Cross-Platform</span>
-        </div>
-        <div className="grid grid-cols-2 gap-1.5 py-0.5">
-          <div className="bg-[#0a0f1a]/90 p-1.5 rounded border border-white/[0.06] space-y-0.5">
-            <span className="text-[7px] text-[#64748b] block uppercase">Platform Target</span>
-            <span className="text-xs font-bold font-mono text-[#3b82f6]">iOS &amp; Android</span>
-          </div>
-          <div className="bg-[#0a0f1a]/90 p-1.5 rounded border border-white/[0.06] space-y-0.5">
-            <span className="text-[7px] text-[#64748b] block uppercase">Performance</span>
-            <span className="text-xs font-bold font-mono text-[#3b82f6]">60 FPS Fluid</span>
-          </div>
-        </div>
-        <div className="flex items-center justify-between pt-1.5 border-t border-white/[0.08] text-[9px] sm:text-[10px] text-[#94a3b8] font-mono">
-          <span>React Native / Flutter</span>
-          <span className="text-[#3b82f6]">App Store Ready</span>
-        </div>
+      <div className="w-full h-36 sm:h-40 relative overflow-hidden rounded-lg border border-white/[0.08]">
+        <Image
+          src="/images/services/mobile-development.jpg"
+          alt="Mobile App Development — iOS and Android application design"
+          fill
+          className="object-cover"
+          sizes="(max-width: 640px) 88vw, 440px"
+        />
       </div>
     )
   }

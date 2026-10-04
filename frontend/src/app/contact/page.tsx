@@ -1,7 +1,8 @@
 'use client';
 
-import { Mail, Phone, MessageSquare } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 import ContactBox from '@/components/ContactBox';
+import { WhatsAppIcon } from '@/components/WhatsAppButton';
 
 export default function Contact() {
   const contacts = [
@@ -13,10 +14,10 @@ export default function Contact() {
       description: 'Direct line for project discussions and inquiries.'
     },
     {
-      icon: <MessageSquare className="h-5 w-5" />,
+      icon: <WhatsAppIcon className="h-5 w-5 text-[#25D366]" />,
       label: 'WHATSAPP',
       value: '+91 7603881020',
-      href: 'https://wa.me/917603881020',
+      href: 'https://wa.me/917603881020?text=Hi%20OSAAC%2C%20I%20would%20like%20to%20discuss%20a%20project%20with%20your%20team.',
       external: true,
       description: 'Quick messaging and real-time requirement sharing.'
     },

@@ -2,8 +2,9 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Sparkles, Phone, MessageSquare, Mail, AlertCircle } from 'lucide-react';
+import { Sparkles, Phone, Mail, AlertCircle } from 'lucide-react';
 import StartProjectFormButton from '@/components/StartProjectFormButton';
+import { WhatsAppIcon } from '@/components/WhatsAppButton';
 
 export default function StartProject() {
   const router = useRouter();
@@ -401,17 +402,17 @@ export default function StartProject() {
 
                   {/* WhatsApp */}
                   <a
-                    href="https://wa.me/917603881020"
+                    href="https://wa.me/917603881020?text=Hi%20OSAAC%2C%20I%20would%20like%20to%20discuss%20a%20project%20with%20your%20team."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-start gap-3.5 group p-3 rounded-xl hover:bg-[#0a0f1a] transition-colors border border-transparent hover:border-white/10"
                   >
-                    <div className="p-2.5 bg-[#0a0f1a] rounded-lg text-[#3b82f6] border border-white/[0.08] shrink-0">
-                      <MessageSquare className="h-4 w-4" />
+                    <div className="p-2.5 bg-[#0a0f1a] rounded-lg text-[#25D366] border border-white/[0.08] shrink-0 group-hover:scale-105 transition-transform">
+                      <WhatsAppIcon className="h-4 w-4" />
                     </div>
                     <div className="min-w-0">
                       <span className="text-[10px] font-mono font-bold text-[#64748b] uppercase tracking-wider block">WhatsApp</span>
-                      <span className="text-sm font-bold font-display text-[#f1f5f9] group-hover:text-[#60a5fa] transition-colors">+91 7603881020</span>
+                      <span className="text-sm font-bold font-display text-[#f1f5f9] group-hover:text-[#25D366] transition-colors">+91 7603881020</span>
                     </div>
                   </a>
 
