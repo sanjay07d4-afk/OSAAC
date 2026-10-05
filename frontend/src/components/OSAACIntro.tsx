@@ -45,22 +45,24 @@ export default function OSAACIntro() {
 
   return (
     <div
-      className={`fixed inset-0 z-[99999] w-screen h-screen flex items-center justify-center bg-[#0a0f1a] overflow-hidden select-none transition-opacity duration-700 ease-out ${
+      className={`fixed inset-0 z-[99999] w-full h-full flex items-center justify-center bg-[#0a0f1a] overflow-hidden select-none transition-opacity duration-700 ease-out ${
         isFadingOut ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
       aria-label="OSAAC Video Intro"
     >
-      <video
-        ref={videoRef}
-        src="/intro-logo.mp4"
-        autoPlay
-        muted
-        playsInline
-        preload="auto"
-        onEnded={handleComplete}
-        onError={handleComplete}
-        className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none"
-      />
+      <div className="relative w-full h-full flex items-center justify-center px-4 sm:px-6 md:px-0">
+        <video
+          ref={videoRef}
+          src="/intro-logo.mp4"
+          autoPlay
+          muted
+          playsInline
+          preload="auto"
+          onEnded={handleComplete}
+          onError={handleComplete}
+          className="w-full h-full max-w-full max-h-full object-contain md:object-cover select-none pointer-events-none"
+        />
+      </div>
     </div>
   );
 }

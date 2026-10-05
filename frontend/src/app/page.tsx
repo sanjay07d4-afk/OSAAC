@@ -168,8 +168,8 @@ export default function Home() {
         >
           <div className="grid grid-cols-2 lg:grid-cols-4">
             {[
-              { numericValue: 10, suffix: '+', label: 'Projects Delivered' },
-              { numericValue: 5, suffix: '+', label: 'Business Solutions' },
+              { numericValue: 4, suffix: '+', label: 'Core Services' },
+              { numericValue: 360, suffix: '°', label: 'Digital Solutions' },
               { numericValue: 100, suffix: '%', label: 'Client Focused' },
               { numericValue: 24, suffix: '/7', label: 'Communication Support' }
             ].map((stat, idx) => (
