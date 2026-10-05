@@ -50,19 +50,17 @@ export default function OSAACIntro() {
       }`}
       aria-label="OSAAC Video Intro"
     >
-      <div className="relative w-full h-full flex items-center justify-center px-4 sm:px-6 md:px-0">
-        <video
-          ref={videoRef}
-          src="/intro-logo.mp4"
-          autoPlay
-          muted
-          playsInline
-          preload="auto"
-          onEnded={handleComplete}
-          onError={handleComplete}
-          className="w-full h-full max-w-full max-h-full object-contain md:object-cover select-none pointer-events-none"
-        />
-      </div>
+      <video
+        ref={videoRef}
+        src="/intro-logo.mp4"
+        autoPlay
+        muted
+        playsInline
+        preload="auto"
+        onEnded={handleComplete}
+        onError={handleComplete}
+        className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none"
+      />
     </div>
   );
 }
