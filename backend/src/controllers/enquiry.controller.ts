@@ -110,12 +110,12 @@ export const createEnquiry = async (req: Request, res: Response) => {
 
     // 4. Synchronize with Google Sheets and WhatsApp server-side
     const sheetSyncResult = await syncToGoogleSheets(enquiryId, savedRecord);
-    const whatsappResult = await sendWhatsAppNotification(enquiryId);
+    const whatsappResult = await sendWhatsAppNotification(enquiryId, savedRecord);
 
     // 5. Respond to client with Success response
     return res.status(201).json({
       success: true,
-      message: 'Your project enquiry has been submitted successfully. Thank you for contacting DRST Technologies. We will review your requirements and get in touch with you.',
+      message: 'Your project enquiry has been submitted successfully. Thank you for contacting OSAAC. We will review your requirements and get in touch with you.',
       enquiryId,
       integrations: {
         google_sheets: sheetSyncResult.success ? 'Synced' : 'Failed',
@@ -157,7 +157,7 @@ export const retryEnquiryIntegrations = async (req: Request, res: Response) => {
     console.log(`[Enquiry Controller] Retrying integrations for enquiry ID: ${id}`);
 
     const sheetSyncResult = await syncToGoogleSheets(id, enquiry);
-    const whatsappResult = await sendWhatsAppNotification(id);
+    const whatsappResult = await sendWhatsAppNotification(id, enquiry);
 
     return res.status(200).json({
       success: true,
