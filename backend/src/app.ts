@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import dotenv from 'dotenv';
 import { createEnquiry, retryEnquiryIntegrations } from './controllers/enquiry.controller';
+import { verifyWebhook, handleWebhookEvent } from './controllers/webhook.controller';
 
 dotenv.config();
 
@@ -26,11 +27,18 @@ app.use(
       return callback(null, true); // Fallback allow for production client compatibility
     },
     methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Hub-Signature-256'],
   })
 );
 
-app.use(express.json());
+// Body parser with rawBody capture for Meta X-Hub-Signature-256 verification
+app.use(
+  express.json({
+    verify: (req: any, _res, buf) => {
+      req.rawBody = buf;
+    },
+  })
+);
 
 // Submission Rate Limiter: max 5 requests per 15 minutes per IP
 const submissionLimiter = rateLimit({
@@ -49,8 +57,14 @@ app.get('/health', (req, res) => {
   res.status(200).json({ status: 'healthy', timestamp: new Date().toISOString() });
 });
 
-// API Routes
+// Enquiry API Routes
 app.post('/api/enquiries', submissionLimiter, createEnquiry);
 app.post('/api/enquiries/:id/retry', retryEnquiryIntegrations);
+
+// Meta WhatsApp Webhook Routes (Both /api/webhook and /webhook supported for flexibility)
+app.get('/api/webhook', verifyWebhook);
+app.post('/api/webhook', handleWebhookEvent);
+app.get('/webhook', verifyWebhook);
+app.post('/webhook', handleWebhookEvent);
 
 export default app;
