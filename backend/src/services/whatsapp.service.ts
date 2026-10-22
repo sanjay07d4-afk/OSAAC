@@ -181,12 +181,29 @@ export const sendWhatsAppNotification = async (
     // Initialize Twilio client
     const client = twilio(accountSid, authToken);
 
-    // Dispatch message via Twilio WhatsApp API
-    const response = await client.messages.create({
+    // Construct dispatch payload supporting both Content Template SID and standard free-form body
+    const messagePayload: any = {
       from: fromNumber,
       to: toNumber,
-      body: messageBody,
-    });
+    };
+
+    if (process.env.TWILIO_CONTENT_SID) {
+      messagePayload.contentSid = process.env.TWILIO_CONTENT_SID;
+      if (process.env.TWILIO_CONTENT_VARIABLES) {
+        messagePayload.contentVariables = process.env.TWILIO_CONTENT_VARIABLES;
+      } else {
+        messagePayload.contentVariables = JSON.stringify({
+          '1': enquiry.client_name || 'Valued Client',
+          '2': enquiry.phone || 'N/A',
+          '3': enquiry.service || 'General Enquiry',
+        });
+      }
+    } else {
+      messagePayload.body = messageBody;
+    }
+
+    // Dispatch message via Twilio WhatsApp API
+    const response = await client.messages.create(messagePayload);
 
     console.log(`[Twilio WhatsApp] Notification sent successfully for enquiry ${enquiryId}. Message SID: ${response.sid}`);
 
@@ -212,11 +229,21 @@ export const sendWhatsAppNotification = async (
       message: safeErrorMessage,
     });
 
-    // Provide helpful sandbox guidance if recipient is not opted into sandbox
-    if (errorCode === 63007 || errorCode === 63015) {
+    // Provide specific guidance based on Twilio error codes
+    if (errorCode === 21654) {
+      console.warn(
+        `[Twilio WhatsApp] Error 21654 (ContentSid Required): ` +
+        `WhatsApp requires a pre-approved template for business-initiated messages outside the 24-hour window. ` +
+        `To send free-form messages, send a message (e.g. "Hi") from ${toNumber} to ${fromNumber} to activate the 24-hour conversation session, or configure TWILIO_CONTENT_SID in Render.`
+      );
+    } else if (errorCode === 63007 || errorCode === 63015) {
       console.warn(
         `[Twilio WhatsApp] Recipient (${toNumber}) has not joined the Twilio WhatsApp Sandbox yet. ` +
         `Send the sandbox join keyword from your WhatsApp to ${fromNumber} to enable delivery.`
+      );
+    } else if (errorCode === 63016) {
+      console.warn(
+        `[Twilio WhatsApp] Error 63016: The 24-hour messaging window has closed. Send a message from your WhatsApp to ${fromNumber} to reopen the window.`
       );
     }
 
